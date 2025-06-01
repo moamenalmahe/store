@@ -185,4 +185,4 @@ npm run dev
 
 ## License
 
-MIT 
+MIT
