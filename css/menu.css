@@ -1,0 +1,590 @@
+/* Menu Styles for BOA STORE
+ * Contains all styles related to the sliding menu, navigation, and search functionality
+ */
+
+/* Menu Toggle Button - زر تبديل القائمة */
+.menu-toggle-item {
+    order: 0; /* Position it at the start of the menu in RTL layout */
+    display: flex;
+    align-items: center; /* Vertically center the button */
+}
+
+/* Fix for nav menu links vertical alignment */
+.nav-menu a, 
+.menu-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.menu-toggle-btn {
+    background: transparent;
+    border: 1px solid rgba(100, 160, 255, 0.3);
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: visible;
+}
+
+.menu-toggle-btn:hover {
+    background-color: transparent;
+    border-color: rgba(100, 160, 255, 0.6);
+    box-shadow: 0 0 15px rgba(64, 169, 255, 0.7);
+    text-shadow: 0 0 10px rgba(64, 169, 255, 0.9);
+    transform: scale(1.05);
+}
+
+.menu-toggle-btn:hover .menu-icon {
+    color: #64a0ff;
+    text-shadow: 0 0 8px rgba(100, 160, 255, 0.9);
+}
+
+.menu-icon {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    top: -1px; /* Slight adjustment to center the hamburger icon */
+}
+
+/* Menu Overlay - تداخل القائمة */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 20, 50, 0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 2000;
+    display: none;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: all 0.4s ease-out;
+}
+
+/* Separate transition for closing animation */
+.menu-overlay.closing {
+    background-color: rgba(0, 20, 50, 0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    transition: background-color 0.2s ease-out, backdrop-filter 0.2s ease-out, -webkit-backdrop-filter 0.2s ease-out;
+}
+
+.menu-content {
+    position: fixed;
+    top: 0;
+    right: 0; /* Position from right */
+    width: 50%; /* Take 50% of browser width */
+    height: 100vh; /* Full height */
+    background: linear-gradient(135deg, rgba(5, 25, 55, 0.5), rgba(0, 5, 15, 0.6)); /* More transparent gradient */
+    box-shadow: 0 0 40px rgba(0, 80, 180, 0.2); /* Lighter shadow */
+    overflow-y: auto;
+    border-left: 1px solid rgba(100, 160, 255, 0.15); /* More transparent border */
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%); /* Start off-screen */
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1); /* Smoother animation */
+    scroll-padding-top: 140px; /* Add scroll padding to account for sticky headers */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 160, 255, 0.4) rgba(5, 25, 55, 0.2);
+}
+
+/* Faster transition for closing animation */
+.menu-overlay.closing .menu-content {
+    transition: transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+/* Custom scrollbar for menu content */
+.menu-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.menu-content::-webkit-scrollbar-track {
+    background: rgba(5, 25, 55, 0.2);
+    border-radius: 4px;
+}
+
+.menu-content::-webkit-scrollbar-thumb {
+    background: rgba(100, 160, 255, 0.4);
+    border-radius: 4px;
+    border: 2px solid rgba(5, 25, 55, 0.2);
+    background-clip: padding-box;
+}
+
+.menu-overlay.active .menu-content {
+    transform: translateX(0); /* Slide in from right */
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(100, 160, 255, 0.15);
+    background: linear-gradient(to right, rgba(20, 80, 150, 0.25), rgba(5, 25, 55, 0.25)); /* More transparent gradient */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.menu-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(100, 180, 255, 0.8);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.close-menu-btn {
+    background: transparent;
+    border: 1px solid rgba(100, 160, 255, 0.3);
+    color: #ffffff;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+}
+
+.close-menu-btn:hover {
+    background-color: transparent;
+    border-color: rgba(100, 160, 255, 0.6);
+    color: #64a0ff;
+    box-shadow: 0 0 15px rgba(64, 169, 255, 0.7);
+    text-shadow: 0 0 10px rgba(64, 169, 255, 0.9);
+    transform: scale(1.05);
+}
+
+/* Search Container - حاوية البحث */
+.search-container {
+    padding: 20px;
+    border-bottom: 1px solid rgba(100, 160, 255, 0.15);
+    background-color: rgba(5, 25, 55, 0.2); /* More transparent background */
+    position: sticky;
+    top: 70px; /* Position below the header */
+    z-index: 9;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.search-container h3 {
+    margin: 0 0 15px;
+    font-size: 18px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(100, 180, 255, 0.6);
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 15px;
+    background-color: rgba(0, 10, 30, 0.25); /* More transparent background */
+    border: 1px solid rgba(100, 160, 255, 0.2);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: rgba(100, 160, 255, 0.4);
+    box-shadow: 0 0 20px rgba(100, 160, 255, 0.2);
+    background-color: rgba(0, 15, 40, 0.35);
+}
+
+.search-box button {
+    padding: 12px 20px;
+    background: linear-gradient(to right, #0c4c82, #1a7dcf);
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 80, 180, 0.3);
+}
+
+.search-box button:hover {
+    background: linear-gradient(to right, #1464a8, #2a8ddf);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 100, 220, 0.4);
+}
+
+/* Menu Links - روابط القائمة */
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+    padding-top: 30px; /* Add extra padding at top to prevent overlap */
+    overflow-y: auto;
+    background: linear-gradient(to bottom, rgba(5, 25, 55, 0.2), rgba(10, 40, 80, 0.15)); /* More transparent gradient */
+}
+
+.menu-sections-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 30px; /* Add space at bottom */
+}
+
+.menu-section {
+    margin-bottom: 30px;
+    background-color: rgba(5, 25, 55, 0.2); /* More transparent background */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); /* Lighter shadow */
+    border: 1px solid rgba(100, 160, 255, 0.08); /* More transparent border */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    position: relative; /* Ensure proper stacking */
+    z-index: 1;
+}
+
+.menu-section:hover {
+    box-shadow: 0 8px 25px rgba(0, 80, 180, 0.15); /* Lighter shadow on hover */
+    border-color: rgba(100, 160, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+.menu-section:last-child {
+    margin-bottom: 0;
+}
+
+.menu-section h3 {
+    margin: 0 0 20px;
+    font-size: 20px;
+    color: #ffffff;
+    position: relative;
+    padding-bottom: 12px;
+    display: inline-block;
+    text-shadow: 0 0 15px rgba(100, 180, 255, 0.7);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.menu-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(to right, #1464a8, #64a0ff);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(100, 160, 255, 0.6);
+}
+
+.menu-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-section ul li {
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.menu-section ul li:hover {
+    transform: translateX(5px);
+}
+
+.menu-section ul a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-right: 18px;
+    display: inline-block;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.menu-section ul a::before {
+    content: '›';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64a0ff;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+    text-shadow: 0 0 8px rgba(100, 160, 255, 0.5);
+}
+
+.menu-section ul a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(100, 180, 255, 0.8);
+}
+
+.menu-section ul a:hover::before {
+    transform: translate(5px, -50%);
+    opacity: 1;
+}
+
+/* Social Links - روابط التواصل الاجتماعي */
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px; /* Increased margin */
+    margin-bottom: 30px; /* Add bottom margin */
+    position: relative; /* Ensure proper stacking */
+    z-index: 1;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 10, 30, 0.25); /* More transparent background */
+    border: 1px solid rgba(100, 160, 255, 0.1); /* More transparent border */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-left: 10px;
+    font-style: normal;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.08); /* More transparent background */
+    transition: all 0.3s ease;
+}
+
+.social-link span {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.social-link.facebook {
+    border-color: rgba(66, 103, 178, 0.3);
+}
+
+.social-link.facebook:hover {
+    background-color: rgba(66, 103, 178, 0.15);
+    border-color: rgba(66, 103, 178, 0.3);
+    box-shadow: 0 5px 15px rgba(66, 103, 178, 0.2);
+}
+
+.social-link.facebook:hover .social-icon {
+    background-color: rgba(66, 103, 178, 0.2);
+}
+
+.social-link.instagram {
+    border-color: rgba(225, 48, 108, 0.3);
+}
+
+.social-link.instagram:hover {
+    background-color: rgba(225, 48, 108, 0.15);
+    border-color: rgba(225, 48, 108, 0.3);
+    box-shadow: 0 5px 15px rgba(225, 48, 108, 0.2);
+}
+
+.social-link.instagram:hover .social-icon {
+    background-color: rgba(225, 48, 108, 0.2);
+}
+
+.social-link.discord {
+    border-color: rgba(114, 137, 218, 0.3);
+}
+
+.social-link.discord:hover {
+    background-color: rgba(114, 137, 218, 0.15);
+    border-color: rgba(114, 137, 218, 0.3);
+    box-shadow: 0 5px 15px rgba(114, 137, 218, 0.2);
+}
+
+.social-link.discord:hover .social-icon {
+    background-color: rgba(114, 137, 218, 0.2);
+}
+
+.social-link.twitter {
+    border-color: rgba(29, 161, 242, 0.3);
+}
+
+.social-link.twitter:hover {
+    background-color: rgba(29, 161, 242, 0.15);
+    border-color: rgba(29, 161, 242, 0.3);
+    box-shadow: 0 5px 15px rgba(29, 161, 242, 0.2);
+}
+
+.social-link.twitter:hover .social-icon {
+    background-color: rgba(29, 161, 242, 0.2);
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .menu-content {
+        width: 60%; /* Slightly wider on medium screens */
+    }
+    
+    .social-links {
+        grid-template-columns: repeat(2, 1fr); /* Keep 2 columns on medium screens */
+    }
+    
+    .search-container {
+        top: 65px; /* Adjust sticky position for smaller header */
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-content {
+        width: 80%; /* Much wider on small screens */
+    }
+    
+    .menu-sections-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .social-links {
+        grid-template-columns: 1fr; /* Stack on very small screens */
+    }
+    
+    .menu-section {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .menu-section h3 {
+        font-size: 18px;
+    }
+    
+    .search-container {
+        padding: 15px;
+        top: 60px; /* Adjust for smaller header */
+    }
+    
+    .menu-links {
+        padding: 15px;
+        padding-top: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-content {
+        width: 100%; /* Full width on very small screens */
+        border-left: none;
+    }
+    
+    .search-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .search-box button {
+        width: 100%;
+    }
+    
+    .menu-header h2 {
+        font-size: 20px;
+    }
+    
+    .search-container {
+        top: 55px; /* Further adjust for even smaller header */
+    }
+    
+    .menu-links {
+        padding-top: 20px;
+    }
+    
+    .menu-section {
+        margin-bottom: 15px;
+    }
+}
+
+/* Active page indicator - مؤشر الصفحة النشطة */
+.nav-menu a.active-page,
+.menu-section ul a.active-page {
+    color: var(--navbar-hover-color);
+    opacity: 1;
+    font-weight: 600;
+}
+
+.nav-menu a.active-page::after {
+    width: 100%;
+}
+
+.menu-section ul a.active-page {
+    color: #ffffff;
+    padding-right: 20px;
+}
+
+.menu-section ul a.active-page::before {
+    opacity: 1;
+}
+
+/* Control Panel Button */
+.nav-menu a.control-panel-link {
+    color: #64a0ff;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a.control-panel-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #64a0ff;
+    box-shadow: 0 0 5px rgba(100, 160, 255, 0.8);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.nav-menu a.control-panel-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(100, 160, 255, 0.8);
+}
+
+.nav-menu a.control-panel-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+} 

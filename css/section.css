@@ -1,0 +1,13 @@
+/* 
+ * BOA STORE Section Styles
+ * This file now serves as an import manager to organize CSS files
+ * Each component has been moved to its own file for better organization
+ */
+
+/* Import all modular CSS files */
+@import 'layout.css';     /* Layout and section styles */
+@import 'forms.css';      /* Form styles and inputs */
+@import 'animations.css'; /* Animations and transitions */
+@import 'menu.css';       /* Menu and navigation styles */
+
+/* Additional section-specific styles that don't fit in other categories */

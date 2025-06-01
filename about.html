@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <!-- Meta tags and page setup - وسوم التعريف وإعداد الصفحة -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS stylesheets - ملفات الأنماط -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <!-- Page title - عنوان الصفحة -->
+    <title>BOA STORE</title>
+</head>
+<body>
+    <!-- Space background canvas - كانفاس خلفية الفضاء -->
+    <!-- This creates the animated stars and meteors - ينشئ النجوم والنيازك المتحركة -->
+    <canvas id="spaceCanvas"></canvas>
+    
+    <!-- Navigation bar - شريط التنقل -->
+    <!-- Main website navigation with links - التنقل الرئيسي للموقع مع الروابط -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">BOA STORE</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="products.html">المنتجات</a></li>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+                <li class="menu-toggle-item">
+                    <button id="menu-toggle-btn" class="menu-toggle-btn">
+                        <i class="menu-icon">☰</i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Dropdown menu overlay -->
+    <div id="menu-overlay" class="menu-overlay">
+        <div class="menu-content">
+            <div class="menu-header">
+                <h2>القائمة</h2>
+                <button id="close-menu-btn" class="close-menu-btn">&times;</button>
+            </div>
+            <div class="search-container">
+                <h3>بحث</h3>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="ابحث عن منتجات...">
+                    <button id="search-btn">بحث</button>
+                </div>
+            </div>
+            <div class="menu-links">
+                <div class="menu-sections-container">
+                    <div class="menu-section">
+                        <h3>روابط سريعة</h3>
+                        <ul>
+                            <li><a href="about.html">من نحن</a></li>
+                            <li><a href="contact-us.html">اتصل بنا</a></li>
+                            <li><a href="products.html">تصفح المنتجات</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-section">
+                        <h3>تواصل معنا</h3>
+                        <div class="social-links">
+                            <a href="https://facebook.com/" target="_blank" class="social-link facebook">
+                                <i class="social-icon">f</i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://instagram.com/" target="_blank" class="social-link instagram">
+                                <i class="social-icon">I</i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://discord.gg/" target="_blank" class="social-link discord">
+                                <i class="social-icon">D</i>
+                                <span>Discord</span>
+                            </a>
+                            <a href="https://x.com/" target="_blank" class="social-link twitter">
+                                <i class="social-icon">X</i>
+                                <span>Twitter/X</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About page content section - قسم محتوى صفحة "من نحن" -->
+    <!-- Content goes here - المحتوى يضاف هنا -->
+    <div class="section-container">
+        <div class="content-section">
+            <h2>من نحن</h2>
+            <p>متجر BOA هو المكان المثالي لشراء حسابات Call of Duty بجميع أنواعها. نحن متخصصون في توفير حسابات آمنة وذات مستويات عالية لعشاق ألعاب Call of Duty.</p>
+            <p>تأسس متجرنا بهدف توفير تجربة شراء سهلة وآمنة لعملائنا، مع ضمان أفضل الأسعار بالجنيه المصري وخدمة عملاء متميزة.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>رؤيتنا</h2>
+            <p>نسعى لأن نكون الوجهة الأولى والموثوقة لشراء حسابات Call of Duty في مصر والوطن العربي، من خلال توفير خدمة عملاء استثنائية وضمان أمان المعاملات.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>لماذا تختارنا؟</h2>
+            <ul class="features-list">
+                <li>حسابات أصلية 100% وآمنة</li>
+                <li>أسعار تنافسية بالجنيه المصري</li>
+                <li>تسليم فوري بعد إتمام عملية الشراء</li>
+                <li>دعم فني على مدار الساعة</li>
+                <li>ضمان استرداد المال في حالة وجود أي مشكلة</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript files - ملفات الجافا سكريبت -->
+    <!-- Main JS file for space background animation - ملف الجافا سكريبت الرئيسي لحركة خلفية الفضاء -->
+    <script src="js/main.js"></script>
+    <!-- Utility functions - وظائف المساعدة -->
+    <script src="js/utility.js"></script>
+    <!-- Menu functionality script - سكريبت وظائف القائمة -->
+    <script src="js/menu.js"></script>
+</body>
+</html>

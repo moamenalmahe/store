@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <!-- Meta tags and page setup - وسوم التعريف وإعداد الصفحة -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS stylesheets - ملفات الأنماط -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/purchase-history.css">
+    <!-- Page title - عنوان الصفحة -->
+    <title>BOA STORE - سجل المشتريات</title>
+</head>
+<body>
+    <!-- Space background canvas - كانفاس خلفية الفضاء -->
+    <canvas id="spaceCanvas"></canvas>
+    
+    <!-- Navigation bar - شريط التنقل -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">BOA STORE</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="products.html">المنتجات</a></li>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+                <li class="menu-toggle-item">
+                    <button id="menu-toggle-btn" class="menu-toggle-btn">
+                        <i class="menu-icon">☰</i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Dropdown menu overlay -->
+    <div id="menu-overlay" class="menu-overlay">
+        <div class="menu-content">
+            <div class="menu-header">
+                <h2>القائمة</h2>
+                <button id="close-menu-btn" class="close-menu-btn">&times;</button>
+            </div>
+            <div class="search-container">
+                <h3>بحث</h3>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="ابحث عن منتجات...">
+                    <button id="search-btn">بحث</button>
+                </div>
+            </div>
+            <div class="menu-links">
+                <div class="menu-sections-container">
+                    <div class="menu-section">
+                        <h3>روابط سريعة</h3>
+                        <ul>
+                            <li><a href="about.html">من نحن</a></li>
+                            <li><a href="contact-us.html">اتصل بنا</a></li>
+                            <li><a href="products.html">تصفح المنتجات</a></li>
+                            <li><a href="purchase-history.html" class="active-page">سجل المشتريات</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-section">
+                        <h3>تواصل معنا</h3>
+                        <div class="social-links">
+                            <a href="https://facebook.com/" target="_blank" class="social-link facebook">
+                                <i class="social-icon">f</i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://instagram.com/" target="_blank" class="social-link instagram">
+                                <i class="social-icon">I</i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://discord.gg/" target="_blank" class="social-link discord">
+                                <i class="social-icon">D</i>
+                                <span>Discord</span>
+                            </a>
+                            <a href="https://x.com/" target="_blank" class="social-link twitter">
+                                <i class="social-icon">X</i>
+                                <span>Twitter/X</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Purchase History Section -->
+    <div class="section-container">
+        <div class="content-section">
+            <h2>سجل المشتريات</h2>
+            <p>يمكنك متابعة جميع عمليات الشراء السابقة والحصول على تفاصيل الحسابات المشتراة من هنا.</p>
+        </div>
+        
+        <div class="purchase-history-container" id="purchase-history-container">
+            <!-- Purchase history items will be loaded here -->
+            <!-- For demonstration purposes, we'll show some example items -->
+            <div class="purchase-item">
+                <div class="purchase-header">
+                    <div class="purchase-id">#1001</div>
+                    <div class="purchase-date">15 مايو 2023</div>
+                </div>
+                <div class="purchase-details">
+                    <div class="product-info">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/80" alt="حساب Warzone">
+                        </div>
+                        <div class="product-text">
+                            <h3>حساب Warzone مستوى 100+</h3>
+                            <p>حساب مع Damascus والعديد من السكنات المميزة</p>
+                        </div>
+                    </div>
+                    <div class="purchase-meta">
+                        <div class="purchase-price">199 EGP</div>
+                        <div class="purchase-status status-completed">مكتمل</div>
+                    </div>
+                </div>
+                <div class="purchase-actions">
+                    <button class="action-btn download-btn">تحميل التفاصيل</button>
+                    <button class="action-btn view-details-btn">عرض التفاصيل</button>
+                </div>
+            </div>
+            
+            <div class="purchase-item">
+                <div class="purchase-header">
+                    <div class="purchase-id">#1002</div>
+                    <div class="purchase-date">10 مايو 2023</div>
+                </div>
+                <div class="purchase-details">
+                    <div class="product-info">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/80" alt="حساب Black Ops">
+                        </div>
+                        <div class="product-text">
+                            <h3>حساب Black Ops مع Dark Matter</h3>
+                            <p>حساب مستوى Prestige 5 مع جميع الأسلحة مفتوحة</p>
+                        </div>
+                    </div>
+                    <div class="purchase-meta">
+                        <div class="purchase-price">299 EGP</div>
+                        <div class="purchase-status status-completed">مكتمل</div>
+                    </div>
+                </div>
+                <div class="purchase-actions">
+                    <button class="action-btn download-btn">تحميل التفاصيل</button>
+                    <button class="action-btn view-details-btn">عرض التفاصيل</button>
+                </div>
+            </div>
+            
+            <div class="purchase-item">
+                <div class="purchase-header">
+                    <div class="purchase-id">#1003</div>
+                    <div class="purchase-date">5 مايو 2023</div>
+                </div>
+                <div class="purchase-details">
+                    <div class="product-info">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/80" alt="حساب Modern Warfare">
+                        </div>
+                        <div class="product-text">
+                            <h3>حساب Modern Warfare مع Obsidian</h3>
+                            <p>حساب K/D 2.5 مع رتبة Diamond</p>
+                        </div>
+                    </div>
+                    <div class="purchase-meta">
+                        <div class="purchase-price">249 EGP</div>
+                        <div class="purchase-status status-pending">قيد المعالجة</div>
+                    </div>
+                </div>
+                <div class="purchase-actions">
+                    <button class="action-btn view-details-btn">عرض التفاصيل</button>
+                </div>
+            </div>
+            
+            <!-- This div will be shown when no purchases are found -->
+            <div class="no-purchases" id="no-purchases" style="display: none;">
+                <h3>لا توجد مشتريات سابقة</h3>
+                <p>لم تقم بأي عمليات شراء حتى الآن. تصفح متجرنا واكتشف مجموعة متنوعة من حسابات Call of Duty.</p>
+                <a href="products.html" class="browse-btn">تصفح المنتجات</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript files - ملفات الجافا سكريبت -->
+    <script src="js/main.js"></script>
+    <script src="js/utility.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/purchase-history.js"></script>
+</body>
+</html> 

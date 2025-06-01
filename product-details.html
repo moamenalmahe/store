@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/product-details.css">
+    <title>BOA STORE - تفاصيل الحساب</title>
+</head>
+<body>
+    <canvas id="spaceCanvas"></canvas>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">BOA STORE</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="products.html">المنتجات</a></li>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+                <li class="menu-toggle-item">
+                    <button id="menu-toggle-btn" class="menu-toggle-btn">
+                        <i class="menu-icon">☰</i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Dropdown menu overlay -->
+    <div id="menu-overlay" class="menu-overlay">
+        <div class="menu-content">
+            <div class="menu-header">
+                <h2>القائمة</h2>
+                <button id="close-menu-btn" class="close-menu-btn">&times;</button>
+            </div>
+            <div class="search-container">
+                <h3>بحث</h3>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="ابحث عن منتجات...">
+                    <button id="search-btn">بحث</button>
+                </div>
+            </div>
+            <div class="menu-links">
+                <div class="menu-sections-container">
+                    <div class="menu-section">
+                        <h3>روابط سريعة</h3>
+                        <ul>
+                            <li><a href="about.html">من نحن</a></li>
+                            <li><a href="contact-us.html">اتصل بنا</a></li>
+                            <li><a href="products.html">تصفح المنتجات</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-section">
+                        <h3>تواصل معنا</h3>
+                        <div class="social-links">
+                            <a href="https://facebook.com/" target="_blank" class="social-link facebook">
+                                <i class="social-icon">f</i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://instagram.com/" target="_blank" class="social-link instagram">
+                                <i class="social-icon">I</i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://discord.gg/" target="_blank" class="social-link discord">
+                                <i class="social-icon">D</i>
+                                <span>Discord</span>
+                            </a>
+                            <a href="https://x.com/" target="_blank" class="social-link twitter">
+                                <i class="social-icon">X</i>
+                                <span>Twitter/X</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-container">
+        <div class="back-link">
+            <a href="products.html">← العودة إلى المنتجات</a>
+        </div>
+        
+        <div class="product-detail-container">
+            <div class="product-details-layout">
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="https://via.placeholder.com/600x400" alt="حساب Warzone">
+                    </div>
+                    <div class="image-thumbnails">
+                        <img src="https://via.placeholder.com/100x100" alt="صورة مصغرة 1" class="active">
+                        <img src="https://via.placeholder.com/100x100" alt="صورة مصغرة 2">
+                        <img src="https://via.placeholder.com/100x100" alt="صورة مصغرة 3">
+                    </div>
+                </div>
+                
+                <div class="product-info-section">
+                    <div class="product-category warzone">Warzone</div>
+                    
+                    <h1 class="product-title">حساب Warzone مستوى 100+ مع Damascus</h1>
+                    
+                    <div class="product-price-large">199 EGP</div>
+                    
+                    <div class="product-availability in-stock">متوفر</div>
+                    
+                    <!-- Seller Information - معلومات البائع -->
+                    <div class="seller-info" id="seller-info">
+                        <strong>البائع:</strong> <span id="product-seller">مدير النظام</span>
+                    </div>
+                    
+                    <div class="product-description">
+                        <p>حساب مميز في Warzone مع مستوى عالي (100+)، يتضمن العديد من المميزات النادرة والحصرية:</p>
+                        <ul>
+                            <li>جميع الأسلحة الأساسية مفتوحة ومطورة بالكامل</li>
+                            <li>سكن Damascus لجميع الأسلحة الأساسية</li>
+                            <li>نسبة K/D عالية (2.5+)</li>
+                            <li>رتبة Prestige 5 مع مستوى خبرة متقدم</li>
+                            <li>العديد من السكنات النادرة للشخصيات والأسلحة</li>
+                            <li>باتل باس متقدم مع العديد من العناصر المميزة</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cod-details">
+                        <div class="cod-detail">
+                            <strong>المستوى:</strong> <span>+100 (Prestige 5)</span>
+                        </div>
+                        <div class="cod-detail">
+                            <strong>نسبة K/D:</strong> <span>2.5+</span>
+                        </div>
+                        <div class="cod-detail">
+                            <strong>السكنات:</strong> <span>Damascus, Gold, Platinum</span>
+                        </div>
+                        <div class="cod-detail">
+                            <strong>عدد الانتصارات:</strong> <span>150+</span>
+                        </div>
+                    </div>
+                    
+                    <button class="purchase-btn" id="purchase-btn">
+                        <i class="icon-cart"></i>
+                        اشتراء الآن
+                    </button>
+                    
+                    <div class="secure-note">
+                        <i class="lock-icon"></i>
+                        <p>تفاصيل الحساب (البريد الإلكتروني وكلمة المرور) ستكون متاحة بعد إتمام عملية الشراء</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-additional-info">
+                <div class="info-tabs">
+                    <button class="info-tab-btn active" data-tab="description">الوصف التفصيلي</button>
+                    <button class="info-tab-btn" data-tab="features">المميزات</button>
+                    <button class="info-tab-btn" data-tab="reviews">التقييمات</button>
+                </div>
+                
+                <div class="tab-content-section active" id="description-section">
+                    <h3>وصف تفصيلي للحساب</h3>
+                    <p>هذا الحساب المميز في لعبة Call of Duty: Warzone يأتي مع مستوى خبرة متقدم يتجاوز المستوى 100، مما يتيح لك الوصول الفوري إلى جميع الأسلحة والملحقات والمهارات في اللعبة. تم تطوير جميع الأسلحة الرئيسية إلى أقصى مستوى، مما يمنحك ميزة تنافسية فورية في ساحة المعركة.</p>
+                    <p>يتميز الحساب بسكن Damascus النادر والمرغوب للغاية، والذي يستغرق الحصول عليه مئات الساعات من اللعب. بالإضافة إلى ذلك، يحتوي الحساب على العديد من السكنات الذهبية والبلاتينية للأسلحة المختلفة.</p>
+                    <p>مع نسبة قتل إلى وفاة (K/D) تتجاوز 2.5، يعتبر هذا الحساب مثاليًا للاعبين الذين يبحثون عن تجربة لعب متقدمة وتنافسية. يتضمن الحساب أيضًا أكثر من 150 انتصارًا، مما يعكس مستوى الأداء العالي.</p>
+                    <p>جميع الشخصيات الأساسية والعديد من الشخصيات الحصرية متاحة في هذا الحساب، مما يتيح لك تخصيص تجربة اللعب بالطريقة التي تفضلها.</p>
+                </div>
+                
+                <div class="tab-content-section" id="features-section">
+                    <h3>مميزات الحساب</h3>
+                    <ul class="features-list">
+                        <li><strong>مستوى متقدم:</strong> 100+ مع رتبة Prestige 5</li>
+                        <li><strong>سكنات نادرة:</strong> Damascus لجميع الأسلحة الأساسية</li>
+                        <li><strong>أداء عالي:</strong> نسبة K/D 2.5+ مع أكثر من 150 انتصارًا</li>
+                        <li><strong>أسلحة مطورة:</strong> جميع الأسلحة الأساسية تم تطويرها بالكامل</li>
+                        <li><strong>شخصيات متنوعة:</strong> مجموعة من الشخصيات الأساسية والحصرية</li>
+                        <li><strong>عناصر حصرية:</strong> العديد من العناصر التي لم تعد متاحة في اللعبة</li>
+                        <li><strong>تكاليف إضافية:</strong> لا توجد تكاليف إضافية بعد الشراء</li>
+                        <li><strong>التسليم:</strong> فوري بعد إتمام عملية الدفع</li>
+                    </ul>
+                </div>
+                
+                <div class="tab-content-section" id="reviews-section">
+                    <h3>تقييمات العملاء</h3>
+                    <div class="reviews-container">
+                        <div class="review-item">
+                            <div class="review-header">
+                                <span class="reviewer-name">أحمد محمد</span>
+                                <div class="rating">★★★★★</div>
+                                <span class="review-date">2023-06-15</span>
+                            </div>
+                            <p class="review-content">حساب رائع جدًا! جميع المميزات كانت كما هو موصوف تمامًا. عملية الشراء كانت سهلة وتلقيت بيانات الحساب فور إتمام عملية الدفع. أنا سعيد جدًا بهذا الشراء.</p>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="review-header">
+                                <span class="reviewer-name">عمر خالد</span>
+                                <div class="rating">★★★★☆</div>
+                                <span class="review-date">2023-05-28</span>
+                            </div>
+                            <p class="review-content">الحساب ممتاز ويحتوي على جميع المميزات المذكورة. الدعم الفني كان متعاونًا جدًا عندما احتجت للمساعدة. أنقص نجمة فقط لأن بعض الأسلحة الموسمية غير متوفرة.</p>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="review-header">
+                                <span class="reviewer-name">سارة أحمد</span>
+                                <div class="rating">★★★★★</div>
+                                <span class="review-date">2023-04-10</span>
+                            </div>
+                            <p class="review-content">أفضل حساب اشتريته! سكن Damascus رائع جدًا ويجعل تجربة اللعب أكثر متعة. أنصح بشدة بالشراء من BOA STORE، فهم محترفون جدًا وموثوقون.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="add-review-form">
+                        <h4>أضف تقييمك</h4>
+                        <form id="add-review-form">
+                            <div class="form-group">
+                                <label for="reviewer-name">الاسم</label>
+                                <input type="text" id="reviewer-name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="rating">التقييم</label>
+                                <div class="star-rating">
+                                    <input type="radio" id="star5" name="rating" value="5" checked>
+                                    <label for="star5">★</label>
+                                    <input type="radio" id="star4" name="rating" value="4">
+                                    <label for="star4">★</label>
+                                    <input type="radio" id="star3" name="rating" value="3">
+                                    <label for="star3">★</label>
+                                    <input type="radio" id="star2" name="rating" value="2">
+                                    <label for="star2">★</label>
+                                    <input type="radio" id="star1" name="rating" value="1">
+                                    <label for="star1">★</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="review-text">التقييم</label>
+                                <textarea id="review-text" rows="4" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">إرسال التقييم</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="related-products">
+                <h2>منتجات مشابهة قد تعجبك</h2>
+                <div class="products-grid small">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x200" alt="حساب Black Ops">
+                        </div>
+                        <div class="product-details">
+                            <h3>حساب Black Ops مع Dark Matter</h3>
+                            <p>حساب محترف في Black Ops مع سكن Dark Matter لجميع الأسلحة</p>
+                            <div class="product-price">299 EGP</div>
+                            <a href="#" class="product-btn">عرض المزيد</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x200" alt="حساب Modern Warfare">
+                        </div>
+                        <div class="product-details">
+                            <h3>حساب Modern Warfare مميز</h3>
+                            <p>حساب مميز في Modern Warfare مع سكنات نادرة</p>
+                            <div class="product-price">399 EGP</div>
+                            <a href="#" class="product-btn">عرض المزيد</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x200" alt="حساب Vanguard">
+                        </div>
+                        <div class="product-details">
+                            <h3>حساب Vanguard مع باتل باس</h3>
+                            <p>حساب Vanguard مع باتل باس كامل وسكنات حصرية</p>
+                            <div class="product-price">499 EGP</div>
+                            <a href="#" class="product-btn">عرض المزيد</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Account Details Modal (only visible for admins or after purchase) -->
+    <div id="account-details-modal" class="purchase-modal">
+        <div class="purchase-modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>تفاصيل الحساب</h2>
+            
+            <div class="account-details">
+                <div class="account-detail">
+                    <strong>البريد الإلكتروني:</strong> <span>user***@example.com</span>
+                </div>
+                <div class="account-detail">
+                    <strong>كلمة المرور:</strong> <span>********abc123</span>
+                </div>
+                <div class="account-detail">
+                    <strong>منصة اللعب:</strong> <span>Battle.net</span>
+                </div>
+                <div class="account-detail">
+                    <strong>اسم المستخدم في اللعبة:</strong> <span>Pro_Player123</span>
+                </div>
+            </div>
+            
+            <div class="security-warning">
+                <p>تحذير: يرجى تغيير كلمة المرور وبيانات الأمان فور تسجيل الدخول للحفاظ على أمان الحساب.</p>
+            </div>
+            
+            <button class="save-details-btn">حفظ التفاصيل</button>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script src="js/utility.js"></script>
+    <script src="js/menu.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get DOM elements - الحصول على عناصر DOM
+            const purchaseBtn = document.getElementById('purchase-btn');
+            const thumbnails = document.querySelectorAll('.image-thumbnails img');
+            const mainImage = document.querySelector('.main-image img');
+            const tabButtons = document.querySelectorAll('.info-tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content-section');
+            const accountDetailsModal = document.getElementById('account-details-modal');
+            const closeModal = document.querySelector('.close-modal');
+            const saveDetailsBtn = document.querySelector('.save-details-btn');
+            const sellerInfo = document.getElementById('seller-info');
+            const productSeller = document.getElementById('product-seller');
+            
+            // Check admin status from session storage - التحقق من حالة المسؤول من تخزين الجلسة
+            function checkAdminStatus() {
+                const adminLoggedIn = sessionStorage.getItem('adminLoggedIn');
+                const adminUsername = sessionStorage.getItem('adminUsername');
+                
+                // Check if admin is logged in - التحقق مما إذا كان المسؤول مسجل الدخول
+                if (adminLoggedIn === 'true' && adminUsername) {
+                    return true;
+                }
+                return false;
+            }
+            
+            // Get product details from URL - الحصول على تفاصيل المنتج من URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            
+            if (productId) {
+                const products = JSON.parse(localStorage.getItem('products') || '[]');
+                const product = products[parseInt(productId)];
+                
+                if (product) {
+                    // Update seller information - تحديث معلومات البائع
+                    if (product.seller && productSeller) {
+                        productSeller.textContent = product.seller;
+                        sellerInfo.style.display = 'block';
+                    } else {
+                        sellerInfo.style.display = 'none';
+                    }
+                    
+                    // Update product price with currency - تحديث سعر المنتج مع العملة
+                    const priceElement = document.querySelector('.product-price-large');
+                    if (priceElement && product.price) {
+                        priceElement.textContent = `${product.price} ${product.currency || 'EGP'}`;
+                    }
+                    
+                    // Hide purchase button for admins - إخفاء زر الشراء للمسؤولين
+                    if (checkAdminStatus() && purchaseBtn) {
+                        purchaseBtn.style.display = 'none';
+                        
+                        // Show account details directly for admins
+                        const accountDetailsBtn = document.createElement('button');
+                        accountDetailsBtn.className = 'admin-btn';
+                        accountDetailsBtn.textContent = 'عرض تفاصيل الحساب';
+                        accountDetailsBtn.addEventListener('click', function() {
+                            accountDetailsModal.style.display = 'block';
+                        });
+                        
+                        // Insert admin button after the hidden purchase button
+                        purchaseBtn.parentNode.insertBefore(accountDetailsBtn, purchaseBtn.nextSibling);
+                    }
+                }
+            }
+            
+            // Add event listener to purchase button - إضافة مستمع حدث لزر الشراء
+            if (purchaseBtn) {
+                // First check if admin - التحقق أولاً إذا كان المستخدم مسؤولاً
+                if (checkAdminStatus()) {
+                    // For admins, disable the purchase button
+                    purchaseBtn.style.display = 'none';
+                    
+                    // Add admin button to view account details
+                    const accountDetailsBtn = document.createElement('button');
+                    accountDetailsBtn.className = 'admin-btn';
+                    accountDetailsBtn.textContent = 'عرض تفاصيل الحساب';
+                    accountDetailsBtn.addEventListener('click', function() {
+                        accountDetailsModal.style.display = 'block';
+                    });
+                    
+                    // Insert admin button after the hidden purchase button
+                    purchaseBtn.parentNode.insertBefore(accountDetailsBtn, purchaseBtn.nextSibling);
+                } else {
+                    // For regular users, enable the purchase functionality
+                    purchaseBtn.addEventListener('click', function() {
+                        // Get product details from URL - الحصول على تفاصيل المنتج من URL
+                        const urlParams = new URLSearchParams(window.location.search);
+                        const productId = urlParams.get('id');
+                        
+                        if (productId) {
+                            const products = JSON.parse(localStorage.getItem('products') || '[]');
+                            const product = products[parseInt(productId)];
+                            
+                            if (product) {
+                                // Store product info in session storage - تخزين معلومات المنتج في تخزين الجلسة
+                                const productInfo = {
+                                    title: product.name,
+                                    price: `${product.price} ${product.currency || 'EGP'}`,
+                                    image: product.image || 'https://via.placeholder.com/300x200',
+                                    seller: product.seller || 'مدير النظام'
+                                };
+                                
+                                sessionStorage.setItem('purchaseProduct', JSON.stringify(productInfo));
+                                
+                                // Redirect to chat purchase page - إعادة التوجيه إلى صفحة شراء الدردشة
+                                window.location.href = 'chat-purchase.html';
+                            }
+                        } else {
+                            // Fallback for old code
+                            const productTitle = document.querySelector('.product-title').textContent;
+                            const productPrice = document.querySelector('.product-price-large').textContent;
+                            const productImage = document.querySelector('.main-image img').src;
+                            
+                            const productInfo = {
+                                title: productTitle,
+                                price: productPrice,
+                                image: productImage
+                            };
+                            
+                            sessionStorage.setItem('purchaseProduct', JSON.stringify(productInfo));
+                            
+                            // Redirect to chat purchase page - إعادة التوجيه إلى صفحة شراء الدردشة
+                            window.location.href = 'chat-purchase.html';
+                        }
+                    });
+                }
+            }
+            
+            // Image thumbnails functionality - وظيفة الصور المصغرة
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    // Remove active class from all thumbnails - إزالة الفئة النشطة من جميع الصور المصغرة
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked thumbnail - إضافة الفئة النشطة إلى الصورة المصغرة التي تم النقر عليها
+                    this.classList.add('active');
+                    
+                    // Update main image source - تحديث مصدر الصورة الرئيسية
+                    mainImage.src = this.src.replace('100x100', '600x400');
+                });
+            });
+            
+            // Tabs functionality - وظيفة التبويبات
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Get tab id - الحصول على معرف التبويب
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and content sections - إزالة الفئة النشطة من جميع الأزرار وأقسام المحتوى
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content - إضافة الفئة النشطة إلى الزر الذي تم النقر عليه والمحتوى المقابل
+                    this.classList.add('active');
+                    document.getElementById(`${tabId}-section`).classList.add('active');
+                });
+            });
+            
+            // Form submission for reviews - إرسال النموذج للمراجعات
+            const reviewForm = document.getElementById('add-review-form');
+            if (reviewForm) {
+                reviewForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values - الحصول على قيم النموذج
+                    const reviewText = document.getElementById('review-text').value.trim();
+                    const reviewerName = document.getElementById('reviewer-name').value.trim();
+                    const ratingValue = document.querySelector('input[name="rating"]:checked')?.value || "5";
+                    
+                    // Validate form - التحقق من صحة النموذج
+                    if (!reviewText || !reviewerName) {
+                        alert('يرجى ملء جميع الحقول المطلوبة');
+                        return;
+                    }
+                    
+                    // Create new review element - إنشاء عنصر مراجعة جديد
+                    const today = new Date();
+                    const dateStr = today.getFullYear() + '-' + 
+                          String(today.getMonth() + 1).padStart(2, '0') + '-' + 
+                          String(today.getDate()).padStart(2, '0');
+                    
+                    const newReview = document.createElement('div');
+                    newReview.className = 'review-item';
+                    newReview.innerHTML = `
+                        <div class="review-header">
+                            <span class="reviewer-name">${reviewerName}</span>
+                            <div class="rating">${'★'.repeat(parseInt(ratingValue))}</div>
+                            <span class="review-date">${dateStr}</span>
+                        </div>
+                        <p class="review-content">${reviewText}</p>
+                    `;
+                    
+                    // Add to reviews container - إضافة إلى حاوية المراجعات
+                    const reviewsContainer = document.querySelector('.reviews-container');
+                    reviewsContainer.insertBefore(newReview, reviewsContainer.firstChild);
+                    
+                    // Clear form - مسح النموذج
+                    reviewForm.reset();
+                    
+                    // Show success message - عرض رسالة النجاح
+                    alert('تم إضافة مراجعتك بنجاح!');
+                });
+            }
+            
+            // Modal functionality
+            if (closeModal && accountDetailsModal) {
+                closeModal.addEventListener('click', function() {
+                    accountDetailsModal.style.display = 'none';
+                });
+                
+                // Close modal when clicking outside
+                window.addEventListener('click', function(event) {
+                    if (event.target === accountDetailsModal) {
+                        accountDetailsModal.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Save account details functionality
+            if (saveDetailsBtn) {
+                saveDetailsBtn.addEventListener('click', function() {
+                    // Get account details
+                    const accountInfo = document.querySelectorAll('.account-detail');
+                    let textContent = "تفاصيل حساب Call of Duty:\n\n";
+                    
+                    accountInfo.forEach(info => {
+                        textContent += `${info.querySelector('strong').textContent} ${info.querySelector('span').textContent}\n`;
+                    });
+                    
+                    // Create temporary element for download
+                    const element = document.createElement('a');
+                    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textContent));
+                    element.setAttribute('download', 'account_details.txt');
+                    
+                    element.style.display = 'none';
+                    document.body.appendChild(element);
+                    
+                    // Simulate click to trigger download
+                    element.click();
+                    
+                    // Clean up and remove the element
+                    document.body.removeChild(element);
+                    
+                    // Show success message
+                    alert('تم حفظ تفاصيل الحساب بنجاح');
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

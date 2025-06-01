@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <!-- Meta tags and page setup - وسوم التعريف وإعداد الصفحة -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS stylesheets - ملفات الأنماط -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <!-- Page title - عنوان الصفحة -->
+    <title>BOA STORE</title>
+</head>
+<body>
+    <!-- Space background canvas - كانفاس خلفية الفضاء -->
+    <!-- This creates the animated stars and meteors - ينشئ النجوم والنيازك المتحركة -->
+    <canvas id="spaceCanvas"></canvas>
+    
+    <!-- Navigation bar - شريط التنقل -->
+    <!-- Main website navigation with links - التنقل الرئيسي للموقع مع الروابط -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">BOA STORE</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="products.html">المنتجات</a></li>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+                <li class="menu-toggle-item">
+                    <button id="menu-toggle-btn" class="menu-toggle-btn">
+                        <i class="menu-icon">☰</i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Dropdown menu overlay -->
+    <div id="menu-overlay" class="menu-overlay">
+        <div class="menu-content">
+            <div class="menu-header">
+                <h2>القائمة</h2>
+                <button id="close-menu-btn" class="close-menu-btn">&times;</button>
+            </div>
+            <div class="search-container">
+                <h3>بحث</h3>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="ابحث عن منتجات...">
+                    <button id="search-btn">بحث</button>
+                </div>
+            </div>
+            <div class="menu-links">
+                <div class="menu-sections-container">
+                    <div class="menu-section">
+                        <h3>روابط سريعة</h3>
+                        <ul>
+                            <li><a href="about.html">من نحن</a></li>
+                            <li><a href="contact-us.html">اتصل بنا</a></li>
+                            <li><a href="products.html">تصفح المنتجات</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-section">
+                        <h3>تواصل معنا</h3>
+                        <div class="social-links">
+                            <a href="https://facebook.com/" target="_blank" class="social-link facebook">
+                                <i class="social-icon">f</i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://instagram.com/" target="_blank" class="social-link instagram">
+                                <i class="social-icon">I</i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://discord.gg/" target="_blank" class="social-link discord">
+                                <i class="social-icon">D</i>
+                                <span>Discord</span>
+                            </a>
+                            <a href="https://x.com/" target="_blank" class="social-link twitter">
+                                <i class="social-icon">X</i>
+                                <span>Twitter/X</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Home page content sections - أقسام محتوى الصفحة الرئيسية -->
+    <div class="section-container">
+        <!-- Welcome section - قسم الترحيب -->
+        <div class="content-section">
+            <h2>مرحباً بكم في BOA STORE</h2>
+            <p>متجر BOA هو وجهتك المثالية لشراء حسابات Call of Duty بجميع أنواعها. نوفر مجموعة واسعة من الحسابات عالية المستوى بأسعار تنافسية بالجنيه المصري.</p>
+            <p>سواء كنت تبحث عن حسابات Warzone أو Modern Warfare أو Black Ops، لدينا ما تحتاجه للتفوق في ساحات المعركة.</p>
+        </div>
+        
+        <!-- Featured accounts section - قسم الحسابات المميزة -->
+        <div class="content-section">
+            <h2>حساباتنا المميزة</h2>
+            <p>نقدم لك حسابات Call of Duty الاحترافية مع سكنات نادرة ومستويات متقدمة. جميع حساباتنا أصلية 100% وجاهزة للاستخدام فور الشراء.</p>
+            <p>استمتع بحسابات تضم سكنات Damascus وDark Matter، ومستويات Prestige عالية، ومعدلات K/D احترافية تمنحك ميزة تنافسية فورية.</p>
+        </div>
+        
+        <!-- Why choose us section - قسم لماذا تختار متجرنا -->
+        <div class="content-section">
+            <h2>لماذا تختار BOA STORE؟</h2>
+            <p>نحن نتميز بتقديم حسابات آمنة 100% مع ضمان عدم الاسترجاع أو الحظر. نوفر الدعم الفني على مدار الساعة وضمان استرداد الأموال إذا واجهت أي مشكلة.</p>
+            <p>استمتع بالتسليم الفوري لتفاصيل الحساب بعد إتمام عملية الشراء، مع إمكانية تغيير بيانات الحساب لضمان ملكيتك الكاملة.</p>
+            <p>انضم إلى آلاف اللاعبين المحترفين الذين يثقون في BOA STORE للحصول على أفضل حسابات Call of Duty في مصر والوطن العربي.</p>
+        </div>
+        
+        <!-- Featured categories section - قسم الفئات المميزة -->
+        <div class="content-section">
+            <h2>فئات الحسابات</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <h3>Warzone</h3>
+                    <p>حسابات مع أسلحة مفتوحة بالكامل وسكنات نادرة</p>
+                </div>
+                <div class="category-card">
+                    <h3>Modern Warfare</h3>
+                    <p>حسابات بمستويات عالية وإحصائيات احترافية</p>
+                </div>
+                <div class="category-card">
+                    <h3>Black Ops</h3>
+                    <p>حسابات مع Dark Matter وDiamond Camos</p>
+                </div>
+                <div class="category-card">
+                    <h3>Vanguard</h3>
+                    <p>أحدث الحسابات مع جميع المميزات المفتوحة</p>
+                </div>
+            </div>
+            <a href="products.html" class="browse-all-btn">تصفح جميع الحسابات</a>
+        </div>
+    </div>
+    
+    <!-- JavaScript files - ملفات الجافا سكريبت -->
+    <!-- Main JS file for space background animation - ملف الجافا سكريبت الرئيسي لحركة خلفية الفضاء -->
+    <script src="js/main.js"></script>
+    <!-- Utility functions - وظائف المساعدة -->
+    <script src="js/utility.js"></script>
+    <!-- Menu functionality script - سكريبت وظائف القائمة -->
+    <script src="js/menu.js"></script>
+</body>
+</html>

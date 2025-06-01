@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <!-- Meta tags and page setup - وسوم التعريف وإعداد الصفحة -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS stylesheets - ملفات الأنماط -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <!-- Page title - عنوان الصفحة -->
+    <title>BOA STORE - لوحة التحكم</title>
+</head>
+<body>
+    <!-- Space background canvas - كانفاس خلفية الفضاء -->
+    <canvas id="spaceCanvas"></canvas>
+    
+    <!-- Navigation bar - شريط التنقل -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">BOA STORE</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="products.html">المنتجات</a></li>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="login.html">تسجيل الخروج</a></li>
+                <li class="menu-toggle-item">
+                    <button id="menu-toggle-btn" class="menu-toggle-btn">
+                        <i class="menu-icon">☰</i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Dropdown menu overlay -->
+    <div id="menu-overlay" class="menu-overlay">
+        <div class="menu-content">
+            <div class="menu-header">
+                <h2>القائمة</h2>
+                <button id="close-menu-btn" class="close-menu-btn">&times;</button>
+            </div>
+            <div class="search-container">
+                <h3>بحث</h3>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="ابحث عن منتجات...">
+                    <button id="search-btn">بحث</button>
+                </div>
+            </div>
+            <div class="menu-links">
+                <div class="menu-sections-container">
+                    <div class="menu-section">
+                        <h3>روابط سريعة</h3>
+                        <ul>
+                            <li><a href="about.html">من نحن</a></li>
+                            <li><a href="contact-us.html">اتصل بنا</a></li>
+                            <li><a href="products.html">تصفح المنتجات</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-section">
+                        <h3>تواصل معنا</h3>
+                        <div class="social-links">
+                            <a href="https://facebook.com/" target="_blank" class="social-link facebook">
+                                <i class="social-icon">f</i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://instagram.com/" target="_blank" class="social-link instagram">
+                                <i class="social-icon">I</i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://discord.gg/" target="_blank" class="social-link discord">
+                                <i class="social-icon">D</i>
+                                <span>Discord</span>
+                            </a>
+                            <a href="https://x.com/" target="_blank" class="social-link twitter">
+                                <i class="social-icon">X</i>
+                                <span>Twitter/X</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Admin panel container - حاوية لوحة المسؤول -->
+    <div class="admin-container">
+        <!-- Admin sidebar - الشريط الجانبي للمسؤول -->
+        <!-- Contains admin info and navigation menu - يحتوي على معلومات المسؤول وقائمة التنقل -->
+        <div class="admin-sidebar">
+            <!-- Admin user info - معلومات المستخدم المسؤول -->
+            <div class="admin-user">
+                <div class="admin-avatar">
+                    <img src="https://via.placeholder.com/80" alt="Admin">
+                </div>
+                <div class="admin-info">
+                    <h3 id="admin-name">مدير النظام</h3>
+                    <p>مدير</p>
+                </div>
+            </div>
+            <!-- Admin navigation menu - قائمة تنقل المسؤول -->
+            <ul class="admin-menu">
+                <li class="active" data-tab="dashboard"><i class="icon-dashboard"></i> لوحة المعلومات</li>
+                <li data-tab="products"><i class="icon-products"></i> إدارة المنتجات</li>
+                <li data-tab="orders"><i class="icon-orders"></i> الطلبات</li>
+                <li data-tab="purchase-history"><i class="icon-history"></i> سجل المبيعات</li>
+                <li data-tab="chat-management"><i class="icon-chat"></i> محادثات المبيعات</li>
+                <li data-tab="discounts"><i class="icon-discount"></i> الخصومات</li>
+                <li data-tab="users"><i class="icon-users"></i> المستخدمين</li>
+                <li data-tab="settings"><i class="icon-settings"></i> الإعدادات</li>
+            </ul>
+        </div>
+        
+        <!-- Admin content area - منطقة محتوى المسؤول -->
+        <!-- Main area for admin panel functionality - المنطقة الرئيسية لوظائف لوحة المسؤول -->
+        <div class="admin-content">
+            <!-- Dashboard Section - قسم لوحة المعلومات -->
+            <!-- Overview statistics and recent activities - إحصائيات عامة والأنشطة الأخيرة -->
+            <section id="dashboard-section" class="admin-section active">
+                <h2>لوحة المعلومات</h2>
+                <!-- Statistics cards - بطاقات الإحصائيات -->
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-icon products-icon"></div>
+                        <div class="stat-info">
+                            <h3>المنتجات</h3>
+                            <p id="products-count">16</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon orders-icon"></div>
+                        <div class="stat-info">
+                            <h3>المبيعات</h3>
+                            <p id="orders-count">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon users-icon"></div>
+                        <div class="stat-info">
+                            <h3>المستخدمين</h3>
+                            <p id="users-count">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon revenue-icon"></div>
+                        <div class="stat-info">
+                            <h3>الإيرادات</h3>
+                            <p id="revenue-count">0 EGP</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent activity - النشاط الأخير -->
+                <div class="recent-activity">
+                    <h3>النشاط الأخير</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-time">12:30</div>
+                            <div class="activity-details">
+                                <p>تم إضافة منتج جديد: هاتف ذكي</p>
+                                <span class="activity-meta">بواسطة: مدير النظام</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-time">11:45</div>
+                            <div class="activity-details">
+                                <p>تم تطبيق خصم 15% على جميع الأجهزة اللوحية</p>
+                                <span class="activity-meta">بواسطة: مدير النظام</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-time">0</div>
+                            <div class="activity-details">
+                                <p>طلب جديد #1234 تم استلامه</p>
+                                <span class="activity-meta">من: الاسم</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Products Management Section - قسم إدارة المنتجات -->
+            <!-- Interface for adding, editing, and managing products - واجهة لإضافة وتعديل وإدارة المنتجات -->
+            <section id="products-section" class="admin-section">
+                <h2>إدارة المنتجات</h2>
+                <!-- Section actions - إجراءات القسم -->
+                <div class="section-actions">
+                    <button id="add-product-btn" class="admin-btn primary">إضافة منتج جديد</button>
+                    <div class="search-box">
+                        <input type="text" placeholder="بحث عن منتج...">
+                        <button class="search-btn">بحث</button>
+                    </div>
+                </div>
+                
+                <!-- Add product form - نموذج إضافة منتج -->
+                <div class="product-form-container" id="product-form">
+                    <h3>إضافة منتج جديد</h3>
+                    <form id="new-product-form">
+                        <!-- Basic product info - معلومات المنتج الأساسية -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="product-name">اسم المنتج</label>
+                                <input type="text" id="product-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="product-price">السعر</label>
+                                <input type="number" id="product-price" min="0" step="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="product-currency">العملة</label>
+                                <select id="product-currency">
+                                    <option value="EGP">جنيه مصري (EGP)</option>
+                                    <option value="USD">دولار أمريكي (USD)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Category and stock - الفئة والمخزون -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="product-category">الفئة</label>
+                                <select id="product-category">
+                                    <option value="warzone">Warzone</option>
+                                    <option value="modern-warfare">Modern Warfare</option>
+                                    <option value="black-ops">Black Ops</option>
+                                    <option value="vanguard">Vanguard</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="product-stock">المخزون</label>
+                                <input type="number" id="product-stock" min="0" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Call of Duty specific fields - حقول خاصة بلعبة Call of Duty -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="product-level">المستوى</label>
+                                <input type="text" id="product-level" placeholder="مثال: 100، Prestige 5">
+                            </div>
+                            <div class="form-group">
+                                <label for="product-kd">نسبة K/D</label>
+                                <input type="text" id="product-kd" placeholder="مثال: 2.5">
+                            </div>
+                        </div>
+                        
+                        <!-- Game rank and skins - رتبة اللعبة والسكنات -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="product-rank">الرتبة</label>
+                                <input type="text" id="product-rank" placeholder="مثال: Master, Diamond">
+                            </div>
+                            <div class="form-group">
+                                <label for="product-skins">السكنات المميزة</label>
+                                <input type="text" id="product-skins" placeholder="مثال: Damascus, Dark Matter">
+                            </div>
+                        </div>
+                        
+                        <!-- Product description - وصف المنتج -->
+                        <div class="form-group">
+                            <label for="product-description">وصف المنتج</label>
+                            <textarea id="product-description" rows="4" placeholder="اكتب مواصفات الحساب مثل الرتبة، الأسلحة المفتوحة، المستوى، الخ..."></textarea>
+                        </div>
+                        
+                        <!-- Product image - صورة المنتج -->
+                        <div class="form-group">
+                            <label for="product-image">رابط الصورة</label>
+                            <input type="url" id="product-image" placeholder="https://...">
+                        </div>
+                        
+                        <!-- After purchase note - ملاحظة ما بعد الشراء -->
+                        <div class="form-group">
+                            <label for="product-note">ملاحظة ما بعد الشراء (معلومات حساسة)</label>
+                            <textarea id="product-note" rows="3" placeholder="معلومات تسليم الحساب، بيانات الدخول، تعليمات التفعيل (ستظهر للمستخدم فقط بعد الشراء)"></textarea>
+                            <small class="secure-info">هذه المعلومات ستكون مرئية فقط بعد إتمام عملية الشراء وستظهر للمشتري فقط.</small>
+                        </div>
+                        
+                        <!-- Form buttons - أزرار النموذج -->
+                        <div class="form-actions">
+                            <button type="submit" class="admin-btn primary">حفظ المنتج</button>
+                            <button type="button" class="admin-btn" id="cancel-product">إلغاء</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Products table - جدول المنتجات -->
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>المنتج</th>
+                                <th>الفئة</th>
+                                <th>السعر</th>
+                                <th>المخزون</th>
+                                <th>الخصم</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="products-table-body">
+                            <!-- Sample product rows - صفوف المنتجات النموذجية -->
+                            <tr>
+                                <td>
+                                    <div class="product-cell">
+                                        <img src="https://via.placeholder.com/50" alt="Product">
+                                        <div>
+                                            <h4>هاتف ذكي</h4>
+                                            <p>SKU: P1001</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>إلكترونيات</td>
+                                <td>1,200 EGP</td>
+                                <td>24</td>
+                                <td>0%</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="edit-btn">تعديل</button>
+                                        <button class="delete-btn">حذف</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="product-cell">
+                                        <img src="https://via.placeholder.com/50" alt="Product">
+                                        <div>
+                                            <h4>سماعات لاسلكية</h4>
+                                            <p>SKU: P1002</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>إلكترونيات</td>
+                                <td>350 EGP</td>
+                                <td>45</td>
+                                <td>15%</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="edit-btn">تعديل</button>
+                                        <button class="delete-btn">حذف</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Discounts Section - قسم الخصومات -->
+            <!-- Interface for managing promotional discounts - واجهة لإدارة الخصومات الترويجية -->
+            <section id="discounts-section" class="admin-section">
+                <h2>إدارة الخصومات</h2>
+                <div class="section-actions">
+                    <button id="add-discount-btn" class="admin-btn primary">إضافة خصم جديد</button>
+                </div>
+                
+                <!-- Add discount form - نموذج إضافة خصم -->
+                <div class="discount-form-container" id="discount-form">
+                    <h3>إضافة خصم جديد</h3>
+                    <form id="new-discount-form">
+                        <!-- Discount name and code - اسم الخصم والرمز -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="discount-name">اسم الخصم</label>
+                                <input type="text" id="discount-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="discount-code">كود الخصم</label>
+                                <input type="text" id="discount-code" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Discount type and value - نوع الخصم وقيمته -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="discount-type">نوع الخصم</label>
+                                <select id="discount-type">
+                                    <option value="percentage">نسبة مئوية</option>
+                                    <option value="fixed">مبلغ ثابت</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="discount-value">قيمة الخصم</label>
+                                <input type="number" id="discount-value" min="0" required>
+                                <small>بالنسبة المئوية أو بالجنيه المصري حسب نوع الخصم</small>
+                            </div>
+                        </div>
+                        
+                        <!-- Discount date range - نطاق تاريخ الخصم -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="start-date">تاريخ البدء</label>
+                                <input type="date" id="start-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="end-date">تاريخ الانتهاء</label>
+                                <input type="date" id="end-date" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Applicable products - المنتجات المطبق عليها -->
+                        <div class="form-group">
+                            <label for="applicable-products">تطبيق على</label>
+                            <select id="applicable-products">
+                                <option value="all">جميع المنتجات</option>
+                                <option value="category">فئة محددة</option>
+                                <option value="specific">منتجات محددة</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Form buttons - أزرار النموذج -->
+                        <div class="form-actions">
+                            <button type="submit" class="admin-btn primary">إضافة الخصم</button>
+                            <button type="button" class="admin-btn" id="cancel-discount">إلغاء</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Discounts table - جدول الخصومات -->
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>اسم الخصم</th>
+                                <th>الكود</th>
+                                <th>القيمة</th>
+                                <th>الحالة</th>
+                                <th>تاريخ الانتهاء</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="discounts-table-body">
+                            <!-- Sample discount rows - صفوف الخصومات النموذجية -->
+                            <tr>
+                                <td>خصم العيد مثال</td>
+                                <td>EID2028</td>
+                                <td>20%</td>
+                                <td><span class="status active">نشط</span></td>
+                                <td>31-12-2023</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="edit-btn">تعديل</button>
+                                        <button class="delete-btn">حذف</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>خصم الشتاء مثال</td>
+                                <td>WINTER</td>
+                                <td>15%</td>
+                                <td><span class="status inactive">منتهي</span></td>
+                                <td>01-03-2023</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="edit-btn">تعديل</button>
+                                        <button class="delete-btn">حذف</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Other admin sections (placeholder) - أقسام المسؤول الأخرى (عناصر نائبة) -->
+            <section id="orders-section" class="admin-section">
+                <h2>إدارة الطلبات</h2>
+                <p>محتوى إدارة الطلبات سيظهر هنا...</p>
+            </section>
+            
+            <!-- Purchase History Section - قسم سجل المبيعات -->
+            <section id="purchase-history-section" class="admin-section">
+                <h2>سجل المبيعات</h2>
+                <div class="section-actions">
+                    <div class="search-box">
+                        <input type="text" id="purchase-search" placeholder="بحث في سجل المبيعات...">
+                        <button class="search-btn">بحث</button>
+                    </div>
+                    <div class="filter-options">
+                        <label for="date-filter">تصفية حسب التاريخ:</label>
+                        <select id="date-filter">
+                            <option value="all">الكل</option>
+                            <option value="today">اليوم</option>
+                            <option value="week">هذا الأسبوع</option>
+                            <option value="month">هذا الشهر</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Purchase history table - جدول سجل المبيعات -->
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>رقم الطلب</th>
+                                <th>المستخدم</th>
+                                <th>المنتج</th>
+                                <th>السعر</th>
+                                <th>تاريخ الشراء</th>
+                                <th>طريقة الدفع</th>
+                                <th>الحالة</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="purchase-history-table-body">
+                            <!-- Sample purchase history rows - صفوف سجل المبيعات النموذجية -->
+                            <tr>
+                                <td>#1001</td>
+                                <td>user123</td>
+                                <td>حساب Warzone مستوى 100+</td>
+                                <td>199 EGP</td>
+                                <td>2023-05-15</td>
+                                <td>فودافون كاش</td>
+                                <td><span class="status active">مكتمل</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="edit-btn">عرض</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#1002</td>
+                                <td>gamer456</td>
+                                <td>حساب Black Ops مع Damascus</td>
+                                <td>299 EGP</td>
+                                <td>2023-05-14</td>
+                                <td>تحويل بنكي</td>
+                                <td><span class="status active">مكتمل</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="edit-btn">عرض</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#1003</td>
+                                <td>player789</td>
+                                <td>حساب Modern Warfare مع Dark Matter</td>
+                                <td>399 EGP</td>
+                                <td>2023-05-13</td>
+                                <td>إنستا باي</td>
+                                <td><span class="status inactive">قيد المعالجة</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="edit-btn">عرض</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="users-section" class="admin-section">
+                <h2>إدارة المستخدمين</h2>
+                <p>محتوى إدارة المستخدمين سيظهر هنا...</p>
+            </section>
+            
+            <section id="settings-section" class="admin-section">
+                <h2>إعدادات النظام</h2>
+                <p>محتوى إعدادات النظام سيظهر هنا...</p>
+            </section>
+            
+            <!-- Chat Management Section - قسم إدارة المحادثات -->
+            <div id="chat-management-section" class="admin-section">
+                <h2>إدارة محادثات المبيعات</h2>
+                <div class="section-actions">
+                    <div class="search-box">
+                        <input type="text" id="search-chat" placeholder="بحث عن المحادثات...">
+                    </div>
+                </div>
+                
+                <div class="admin-chat-container">
+                    <div class="chat-list-container">
+                        <h3>المحادثات النشطة</h3>
+                        <div class="chat-list" id="admin-chat-list">
+                            <!-- Chat items will be added here dynamically -->
+                        </div>
+                    </div>
+                    
+                    <div class="admin-chat-area">
+                        <div class="chat-details-header">
+                            <div class="chat-user-info">
+                                <h3 id="chat-with-user">حدد محادثة</h3>
+                                <div id="chat-product-info">اختر محادثة من القائمة</div>
+                            </div>
+                            <div class="chat-controls">
+                                <button id="confirm-payment-admin" class="admin-btn">تأكيد الدفع</button>
+                                <button id="reject-payment-admin" class="admin-btn danger">رفض الدفع</button>
+                            </div>
+                        </div>
+                        
+                        <div class="admin-chat-messages" id="admin-chat-messages">
+                            <!-- Messages will be added here dynamically -->
+                            <div class="message system-message">
+                                <div class="message-content">
+                                    اختر محادثة من القائمة لعرض الرسائل
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <form id="admin-message-form" class="admin-chat-form">
+                            <input type="text" id="admin-message-input" placeholder="اكتب رسالتك هنا..." required>
+                            <button type="submit" class="admin-btn primary">إرسال</button>
+                        </form>
+                        
+                        <div class="account-details-form">
+                            <h3>إرسال تفاصيل الحساب</h3>
+                            <div class="form-group">
+                                <label for="account-email">البريد الإلكتروني للعميل</label>
+                                <input type="email" id="account-email" placeholder="أدخل البريد الإلكتروني للعميل">
+                            </div>
+                            <button id="send-account-details" class="admin-btn primary">إرسال تفاصيل الحساب</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript files - ملفات الجافا سكريبت -->
+    <script src="js/main.js"></script>
+    <script src="js/utility.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/admin-chat.js"></script>
+    <!-- Menu functionality script - سكريبت وظائف القائمة -->
+    <script src="js/menu.js"></script>
+</body>
+</html> 

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <!-- Meta tags and page setup - وسوم التعريف وإعداد الصفحة -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS stylesheets - ملفات الأنماط -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <!-- Page title - عنوان الصفحة -->
+    <title>BOA STORE - حسابات Call of Duty</title>
+</head>
+<body>
+    <!-- Space background canvas - كانفاس خلفية الفضاء -->
+    <!-- This creates the animated stars and meteors - ينشئ النجوم والنيازك المتحركة -->
+    <canvas id="spaceCanvas"></canvas>
+    
+    <!-- Navigation bar - شريط التنقل -->
+    <!-- Main website navigation with links - التنقل الرئيسي للموقع مع الروابط -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">BOA STORE</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="products.html">المنتجات</a></li>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+                <li class="menu-toggle-item">
+                    <button id="menu-toggle-btn" class="menu-toggle-btn">
+                        <i class="menu-icon">☰</i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Dropdown menu overlay -->
+    <div id="menu-overlay" class="menu-overlay">
+        <div class="menu-content">
+            <div class="menu-header">
+                <h2>القائمة</h2>
+                <button id="close-menu-btn" class="close-menu-btn">&times;</button>
+            </div>
+            <div class="search-container">
+                <h3>بحث</h3>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="ابحث عن منتجات...">
+                    <button id="search-btn">بحث</button>
+                </div>
+            </div>
+            <div class="menu-links">
+                <div class="menu-sections-container">
+                    <div class="menu-section">
+                        <h3>روابط سريعة</h3>
+                        <ul>
+                            <li><a href="about.html">من نحن</a></li>
+                            <li><a href="contact-us.html">اتصل بنا</a></li>
+                            <li><a href="products.html">تصفح المنتجات</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-section">
+                        <h3>تواصل معنا</h3>
+                        <div class="social-links">
+                            <a href="https://facebook.com/" target="_blank" class="social-link facebook">
+                                <i class="social-icon">f</i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://instagram.com/" target="_blank" class="social-link instagram">
+                                <i class="social-icon">I</i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://discord.gg/" target="_blank" class="social-link discord">
+                                <i class="social-icon">D</i>
+                                <span>Discord</span>
+                            </a>
+                            <a href="https://x.com/" target="_blank" class="social-link twitter">
+                                <i class="social-icon">X</i>
+                                <span>Twitter/X</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products page container - حاوية صفحة المنتجات -->
+    <div class="section-container">
+        <!-- Products page header - ترويسة صفحة المنتجات -->
+        <div class="content-section">
+            <center><h2>حسابات Call of Duty</h2></center>
+            <p>اكتشف مجموعتنا الواسعة من حسابات Call of Duty المميزة. نوفر حسابات بمستويات عالية وأسلحة نادرة وسكنات حصرية.</p>
+        </div>
+        
+        <!-- Products grid - شبكة المنتجات -->
+        <!-- Grid layout for displaying products - تخطيط شبكي لعرض المنتجات -->
+        <div class="products-grid">
+            <!-- Product 1 - المنتج 1 -->
+            <!-- Warzone account card - بطاقة حساب Warzone -->
+            <div class="product-card">
+                <!-- Product image - صورة المنتج -->
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x200" alt="منتج 1">
+                </div>
+                <!-- Product details - تفاصيل المنتج -->
+                <div class="product-details">
+                    <h3>حساب Warzone مستوى 100+</h3>
+                    <p>حساب مميز في Warzone مع مستوى عالي، جميع الأسلحة الأساسية مفتوحة، سكنات نادرة، و K/D نسبة 2.5+</p>
+                    <!-- Product price in EGP - سعر المنتج بالجنيه المصري -->
+                    <div class="product-price">199 EGP</div>
+                    <!-- View details link - رابط عرض التفاصيل -->
+                    <a href="product-details.html?id=0" class="product-btn">عرض المزيد</a>
+                    <!-- Security note - ملاحظة الأمان -->
+                    <!-- Explains that account details are only available after purchase - يشرح أن تفاصيل الحساب متاحة فقط بعد الشراء -->
+                    <div class="secure-note">
+                        <i class="lock-icon"></i>
+                        <p>تفاصيل الحساب (البريد الإلكتروني وكلمة المرور) ستكون متاحة بعد إتمام عملية الشراء</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 - المنتج 2 -->
+            <!-- Black Ops account card - بطاقة حساب Black Ops -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x200" alt="منتج 2">
+                </div>
+                <div class="product-details">
+                    <h3>حساب Black Ops مع Damascus</h3>
+                    <p>حساب محترف في Black Ops مع سكن Damascus لجميع الأسلحة، رتبة عالية في اللعب التنافسي، وجميع الشخصيات مفتوحة</p>
+                    <div class="product-price">299 EGP</div>
+                    <a href="product-details.html?id=1" class="product-btn">عرض المزيد</a>
+                    <div class="secure-note">
+                        <i class="lock-icon"></i>
+                        <p>تفاصيل الحساب (البريد الإلكتروني وكلمة المرور) ستكون متاحة بعد إتمام عملية الشراء</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 - المنتج 3 -->
+            <!-- Modern Warfare account card - بطاقة حساب Modern Warfare -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x200" alt="منتج 3">
+                </div>
+                <div class="product-details">
+                    <h3>حساب Modern Warfare مع Dark Matter</h3>
+                    <p>حساب مميز في Modern Warfare مع سكن Dark Matter، جميع الأسلحة مطورة بالكامل، مستوى Prestige عالي</p>
+                    <div class="product-price">399 EGP</div>
+                    <a href="product-details.html?id=2" class="product-btn">عرض المزيد</a>
+                    <div class="secure-note">
+                        <i class="lock-icon"></i>
+                        <p>تفاصيل الحساب (البريد الإلكتروني وكلمة المرور) ستكون متاحة بعد إتمام عملية الشراء</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 - المنتج 4 -->
+            <!-- Vanguard account card - بطاقة حساب Vanguard -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x200" alt="منتج 4">
+                </div>
+                <div class="product-details">
+                    <h3>حساب Vanguard مع باتل باس</h3>
+                    <p>حساب Vanguard مع باتل باس كامل، جميع الأسلحة الموسمية، وسكنات حصرية للأسلحة والشخصيات</p>
+                    <div class="product-price">499 EGP</div>
+                    <a href="product-details.html?id=3" class="product-btn">عرض المزيد</a>
+                    <div class="secure-note">
+                        <i class="lock-icon"></i>
+                        <p>تفاصيل الحساب (البريد الإلكتروني وكلمة المرور) ستكون متاحة بعد إتمام عملية الشراء</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 - المنتج 5 -->
+            <!-- Master Warzone account card - بطاقة حساب Warzone ماستر -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x200" alt="منتج 5">
+                </div>
+                <div class="product-details">
+                    <h3>حساب Warzone مع مستوى ماستر</h3>
+                    <p>حساب Warzone بمستوى ماستر، سكنات حصرية، جميع الأسلحة مفتوحة ومطورة بالكامل، نسبة فوز عالية</p>
+                    <div class="product-price">599 EGP</div>
+                    <a href="product-details.html?id=4" class="product-btn">عرض المزيد</a>
+                    <div class="secure-note">
+                        <i class="lock-icon"></i>
+                        <p>تفاصيل الحساب (البريد الإلكتروني وكلمة المرور) ستكون متاحة بعد إتمام عملية الشراء</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 - المنتج 6 -->
+            <!-- Complete COD account card - بطاقة حساب Call of Duty الشامل -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x200" alt="منتج 6">
+                </div>
+                <div class="product-details">
+                    <h3>حساب Call of Duty الشامل</h3>
+                    <p>حساب يشمل جميع ألعاب Call of Duty مع مستويات عالية، وجميع الإضافات المدفوعة، وعملات داخل اللعبة</p>
+                    <div class="product-price">699 EGP</div>
+                    <a href="product-details.html?id=5" class="product-btn">عرض المزيد</a>
+                    <div class="secure-note">
+                        <i class="lock-icon"></i>
+                        <p>تفاصيل الحساب (البريد الإلكتروني وكلمة المرور) ستكون متاحة بعد إتمام عملية الشراء</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript files - ملفات الجافا سكريبت -->
+    <!-- Main JS for space background - جافا سكريبت الخلفية -->
+    <script src="js/main.js"></script>
+    <!-- Utility functions - وظائف المساعدة -->
+    <script src="js/utility.js"></script>
+    <!-- Products JS for product-specific functionality - جافا سكريبت خاص بالمنتجات -->
+    <script src="js/products.js"></script>
+    <!-- Menu functionality script - سكريبت وظائف القائمة -->
+    <script src="js/menu.js"></script>
+</body>
+</html>

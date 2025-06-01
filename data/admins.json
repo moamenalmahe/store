@@ -1,0 +1,12 @@
+{
+  "admins": [
+    {
+      "id": "1",
+      "username": "superadmin",
+      "password": "$2b$10$XJvB1OF8hHe5K/mI.Qh.6OcVoXBE1Fq4YJxHtSrIwGcT6GpPNkJXe",
+      "role": "superadmin",
+      "email": "superadmin@local.com",
+      "created_at": "2024-01-01T00:00:00.000Z"
+    }
+  ]
+} 

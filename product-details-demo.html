@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <!-- Meta tags and page setup - وسوم التعريف وإعداد الصفحة -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS stylesheets - ملفات الأنماط -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/section.css">
+    <!-- Page title - عنوان الصفحة -->
+    <title>BOA STORE - تفاصيل الحساب</title>
+</head>
+<body>
+    <!-- Space background canvas - كانفاس خلفية الفضاء -->
+    <!-- This creates the animated stars and meteors - ينشئ النجوم والنيازك المتحركة -->
+    <canvas id="spaceCanvas"></canvas>
+    
+    <!-- Navigation bar - شريط التنقل -->
+    <!-- Main website navigation with links - التنقل الرئيسي للموقع مع الروابط -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">BOA STORE</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="products.html">المنتجات</a></li>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+                <li class="menu-toggle-item">
+                    <button id="menu-toggle-btn" class="menu-toggle-btn">
+                        <i class="menu-icon">☰</i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Dropdown menu overlay -->
+    <div id="menu-overlay" class="menu-overlay">
+        <div class="menu-content">
+            <div class="menu-header">
+                <h2>القائمة</h2>
+                <button id="close-menu-btn" class="close-menu-btn">&times;</button>
+            </div>
+            <div class="search-container">
+                <h3>بحث</h3>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="ابحث عن منتجات...">
+                    <button id="search-btn">بحث</button>
+                </div>
+            </div>
+            <div class="menu-links">
+                <div class="menu-sections-container">
+                    <div class="menu-section">
+                        <h3>روابط سريعة</h3>
+                        <ul>
+                            <li><a href="about.html">من نحن</a></li>
+                            <li><a href="contact-us.html">اتصل بنا</a></li>
+                            <li><a href="products.html">تصفح المنتجات</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-section">
+                        <h3>تواصل معنا</h3>
+                        <div class="social-links">
+                            <a href="https://facebook.com/" target="_blank" class="social-link facebook">
+                                <i class="social-icon">f</i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://instagram.com/" target="_blank" class="social-link instagram">
+                                <i class="social-icon">I</i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://discord.gg/" target="_blank" class="social-link discord">
+                                <i class="social-icon">D</i>
+                                <span>Discord</span>
+                            </a>
+                            <a href="https://x.com/" target="_blank" class="social-link twitter">
+                                <i class="social-icon">X</i>
+                                <span>Twitter/X</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Product details container - حاوية تفاصيل المنتج -->
+    <div class="section-container">
+        <!-- Back to products link - رابط العودة إلى المنتجات -->
+        <div class="back-link">
+            <a href="products.html">← العودة إلى المنتجات</a>
+        </div>
+        
+        <!-- Product details layout - تخطيط تفاصيل المنتج -->
+        <div class="product-details-layout">
+            <!-- Product images section - قسم صور المنتج -->
+            <div class="product-images">
+                <div class="main-image">
+                    <img src="https://via.placeholder.com/600x400" alt="حساب Warzone">
+                </div>
+                <div class="image-thumbnails">
+                    <img src="https://via.placeholder.com/100x100" alt="صورة مصغرة 1" class="active">
+                    <img src="https://via.placeholder.com/100x100" alt="صورة مصغرة 2">
+                    <img src="https://via.placeholder.com/100x100" alt="صورة مصغرة 3">
+                </div>
+            </div>
+            
+            <!-- Product info section - قسم معلومات المنتج -->
+            <div class="product-info-section">
+                <!-- Game category badge - شارة فئة اللعبة -->
+                <div class="product-category warzone">Warzone</div>
+                
+                <!-- Product title - عنوان المنتج -->
+                <h1 class="product-title">حساب Warzone مستوى 100+ مع Damascus</h1>
+                
+                <!-- Product price - سعر المنتج -->
+                <div class="product-price-large">199 EGP</div>
+                
+                <!-- Product availability - توفر المنتج -->
+                <div class="product-availability in-stock">متوفر</div>
+                
+                <!-- Product description - وصف المنتج -->
+                <div class="product-description">
+                    <p>حساب مميز في Warzone مع مستوى عالي (100+)، يتضمن العديد من المميزات النادرة والحصرية:</p>
+                    <ul>
+                        <li>جميع الأسلحة الأساسية مفتوحة ومطورة بالكامل</li>
+                        <li>سكن Damascus لجميع الأسلحة الأساسية</li>
+                        <li>نسبة K/D عالية (2.5+)</li>
+                        <li>رتبة Prestige 5 مع مستوى خبرة متقدم</li>
+                        <li>العديد من السكنات النادرة للشخصيات والأسلحة</li>
+                        <li>باتل باس متقدم مع العديد من العناصر المميزة</li>
+                    </ul>
+                </div>
+                
+                <!-- Call of Duty account details - تفاصيل حساب Call of Duty -->
+                <div class="cod-details">
+                    <div class="cod-detail">
+                        <strong>المستوى:</strong> <span>+100 (Prestige 5)</span>
+                    </div>
+                    <div class="cod-detail">
+                        <strong>نسبة K/D:</strong> <span>2.5+</span>
+                    </div>
+                    <div class="cod-detail">
+                        <strong>السكنات:</strong> <span>Damascus, Gold, Platinum</span>
+                    </div>
+                    <div class="cod-detail">
+                        <strong>عدد الانتصارات:</strong> <span>150+</span>
+                    </div>
+                </div>
+                
+                <!-- Purchase button - زر الشراء -->
+                <button class="purchase-btn" id="purchase-btn">
+                    <i class="icon-cart"></i>
+                    اشتراء الآن
+                </button>
+                
+                <!-- Security note - ملاحظة الأمان -->
+                <div class="secure-note">
+                    <i class="lock-icon"></i>
+                    <p>تفاصيل الحساب (البريد الإلكتروني وكلمة المرور) ستكون متاحة بعد إتمام عملية الشراء</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional product information - معلومات إضافية عن المنتج -->
+        <div class="product-additional-info">
+            <!-- Information tabs - تبويبات المعلومات -->
+            <div class="info-tabs">
+                <button class="info-tab-btn active" data-tab="description">الوصف التفصيلي</button>
+                <button class="info-tab-btn" data-tab="features">المميزات</button>
+                <button class="info-tab-btn" data-tab="reviews">التقييمات</button>
+            </div>
+            
+            <!-- Tab content sections - أقسام محتوى التبويب -->
+            <div class="tab-content-section active" id="description-section">
+                <h3>وصف تفصيلي للحساب</h3>
+                <p>هذا الحساب المميز في لعبة Call of Duty: Warzone يأتي مع مستوى خبرة متقدم يتجاوز المستوى 100، مما يتيح لك الوصول الفوري إلى جميع الأسلحة والملحقات والمهارات في اللعبة. تم تطوير جميع الأسلحة الرئيسية إلى أقصى مستوى، مما يمنحك ميزة تنافسية فورية في ساحة المعركة.</p>
+                <p>يتميز الحساب بسكن Damascus النادر والمرغوب للغاية، والذي يستغرق الحصول عليه مئات الساعات من اللعب. بالإضافة إلى ذلك، يحتوي الحساب على العديد من السكنات الذهبية والبلاتينية للأسلحة المختلفة.</p>
+                <p>مع نسبة قتل إلى وفاة (K/D) تتجاوز 2.5، يعتبر هذا الحساب مثاليًا للاعبين الذين يبحثون عن تجربة لعب متقدمة وتنافسية. يتضمن الحساب أيضًا أكثر من 150 انتصارًا، مما يعكس مستوى الأداء العالي.</p>
+                <p>جميع الشخصيات الأساسية والعديد من الشخصيات الحصرية متاحة في هذا الحساب، مما يتيح لك تخصيص تجربة اللعب بالطريقة التي تفضلها.</p>
+            </div>
+            
+            <div class="tab-content-section" id="features-section">
+                <h3>مميزات الحساب</h3>
+                <ul class="features-list">
+                    <li><strong>مستوى متقدم:</strong> 100+ مع رتبة Prestige 5</li>
+                    <li><strong>سكنات نادرة:</strong> Damascus لجميع الأسلحة الأساسية</li>
+                    <li><strong>أداء عالي:</strong> نسبة K/D 2.5+ مع أكثر من 150 انتصارًا</li>
+                    <li><strong>أسلحة مطورة:</strong> جميع الأسلحة الأساسية تم تطويرها بالكامل</li>
+                    <li><strong>شخصيات متنوعة:</strong> مجموعة من الشخصيات الأساسية والحصرية</li>
+                    <li><strong>عناصر حصرية:</strong> العديد من العناصر التي لم تعد متاحة في اللعبة</li>
+                    <li><strong>تكاليف إضافية:</strong> لا توجد تكاليف إضافية بعد الشراء</li>
+                    <li><strong>التسليم:</strong> فوري بعد إتمام عملية الدفع</li>
+                </ul>
+            </div>
+            
+            <div class="tab-content-section" id="reviews-section">
+                <h3>تقييمات العملاء</h3>
+                <div class="reviews-container">
+                    <!-- Review 1 - التقييم 1 -->
+                    <div class="review-item">
+                        <div class="review-header">
+                            <span class="reviewer-name">أحمد محمد</span>
+                            <div class="rating">★★★★★</div>
+                            <span class="review-date">2023-06-15</span>
+                        </div>
+                        <p class="review-content">حساب رائع جدًا! جميع المميزات كانت كما هو موصوف تمامًا. عملية الشراء كانت سهلة وتلقيت بيانات الحساب فور إتمام عملية الدفع. أنا سعيد جدًا بهذا الشراء.</p>
+                    </div>
+                    
+                    <!-- Review 2 - التقييم 2 -->
+                    <div class="review-item">
+                        <div class="review-header">
+                            <span class="reviewer-name">عمر خالد</span>
+                            <div class="rating">★★★★☆</div>
+                            <span class="review-date">2023-05-28</span>
+                        </div>
+                        <p class="review-content">الحساب ممتاز ويحتوي على جميع المميزات المذكورة. الدعم الفني كان متعاونًا جدًا عندما احتجت للمساعدة. أنقص نجمة فقط لأن بعض الأسلحة الموسمية غير متوفرة.</p>
+                    </div>
+                    
+                    <!-- Review 3 - التقييم 3 -->
+                    <div class="review-item">
+                        <div class="review-header">
+                            <span class="reviewer-name">سارة أحمد</span>
+                            <div class="rating">★★★★★</div>
+                            <span class="review-date">2023-04-10</span>
+                        </div>
+                        <p class="review-content">أفضل حساب اشتريته! سكن Damascus رائع جدًا ويجعل تجربة اللعب أكثر متعة. أنصح بشدة بالشراء من BOA STORE، فهم محترفون جدًا وموثوقون.</p>
+                    </div>
+                </div>
+                
+                <!-- Add Review Form - نموذج إضافة تقييم -->
+                <div class="add-review-form">
+                    <h4>أضف تقييمك</h4>
+                    <form id="add-review-form">
+                        <div class="form-group">
+                            <label for="reviewer-name">الاسم</label>
+                            <input type="text" id="reviewer-name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="rating">التقييم</label>
+                            <div class="star-rating">
+                                <input type="radio" id="star5" name="rating" value="5" checked>
+                                <label for="star5">★</label>
+                                <input type="radio" id="star4" name="rating" value="4">
+                                <label for="star4">★</label>
+                                <input type="radio" id="star3" name="rating" value="3">
+                                <label for="star3">★</label>
+                                <input type="radio" id="star2" name="rating" value="2">
+                                <label for="star2">★</label>
+                                <input type="radio" id="star1" name="rating" value="1">
+                                <label for="star1">★</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="review-text">التقييم</label>
+                            <textarea id="review-text" rows="4" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">إرسال التقييم</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Related products - المنتجات ذات الصلة -->
+        <div class="related-products">
+            <h2>منتجات مشابهة قد تعجبك</h2>
+            <div class="products-grid small">
+                <!-- Related product 1 - منتج ذو صلة 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x200" alt="حساب Black Ops">
+                    </div>
+                    <div class="product-details">
+                        <h3>حساب Black Ops مع Dark Matter</h3>
+                        <p>حساب محترف في Black Ops مع سكن Dark Matter لجميع الأسلحة</p>
+                        <div class="product-price">299 EGP</div>
+                        <a href="#" class="product-btn">عرض المزيد</a>
+                    </div>
+                </div>
+                
+                <!-- Related product 2 - منتج ذو صلة 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x200" alt="حساب Modern Warfare">
+                    </div>
+                    <div class="product-details">
+                        <h3>حساب Modern Warfare مميز</h3>
+                        <p>حساب مميز في Modern Warfare مع سكنات نادرة</p>
+                        <div class="product-price">399 EGP</div>
+                        <a href="#" class="product-btn">عرض المزيد</a>
+                    </div>
+                </div>
+                
+                <!-- Related product 3 - منتج ذو صلة 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x200" alt="حساب Vanguard">
+                    </div>
+                    <div class="product-details">
+                        <h3>حساب Vanguard مع باتل باس</h3>
+                        <p>حساب Vanguard مع باتل باس كامل وسكنات حصرية</p>
+                        <div class="product-price">499 EGP</div>
+                        <a href="#" class="product-btn">عرض المزيد</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript files - ملفات الجافا سكريبت -->
+    <script src="js/main.js"></script>
+    <script src="js/section.js"></script>
+    <!-- Menu functionality script - سكريبت وظائف القائمة -->
+    <script src="js/menu.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get DOM elements - الحصول على عناصر DOM
+            const purchaseBtn = document.getElementById('purchase-btn');
+            const thumbnails = document.querySelectorAll('.image-thumbnails img');
+            const mainImage = document.querySelector('.main-image img');
+            const tabButtons = document.querySelectorAll('.info-tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content-section');
+            
+            // Add event listener to purchase button - إضافة مستمع حدث لزر الشراء
+            // Redirects to chat page instead of showing modal - إعادة التوجيه إلى صفحة الدردشة بدلاً من إظهار النافذة المنبثقة
+            purchaseBtn.addEventListener('click', function() {
+                // Store product info in session storage - تخزين معلومات المنتج في تخزين الجلسة
+                const productTitle = document.querySelector('.product-title').textContent;
+                const productPrice = document.querySelector('.product-price-large').textContent;
+                const productImage = document.querySelector('.main-image img').src;
+                
+                sessionStorage.setItem('purchaseProduct', JSON.stringify({
+                    title: productTitle,
+                    price: productPrice,
+                    image: productImage
+                }));
+                
+                // Redirect to chat page - إعادة التوجيه إلى صفحة الدردشة
+                window.location.href = 'chat-purchase.html';
+            });
+            
+            // Image thumbnails functionality - وظيفة الصور المصغرة
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    // Remove active class from all thumbnails - إزالة الفئة النشطة من جميع الصور المصغرة
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked thumbnail - إضافة الفئة النشطة إلى الصورة المصغرة التي تم النقر عليها
+                    this.classList.add('active');
+                    
+                    // Update main image source - تحديث مصدر الصورة الرئيسية
+                    mainImage.src = this.src.replace('thumb', 'large');
+                });
+            });
+            
+            // Tabs functionality - وظيفة التبويبات
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Get tab id - الحصول على معرف التبويب
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and content sections - إزالة الفئة النشطة من جميع الأزرار وأقسام المحتوى
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content - إضافة الفئة النشطة إلى الزر الذي تم النقر عليه والمحتوى المقابل
+                    this.classList.add('active');
+                    document.getElementById(`${tabId}-section`).classList.add('active');
+                });
+            });
+            
+            // Form submission for reviews - إرسال النموذج للمراجعات
+            const reviewForm = document.getElementById('add-review-form');
+            if (reviewForm) {
+                reviewForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values - الحصول على قيم النموذج
+                    const reviewText = document.getElementById('review-text').value.trim();
+                    const reviewerName = document.getElementById('reviewer-name').value.trim();
+                    const ratingValue = document.querySelector('input[name="rating"]:checked')?.value || "5";
+                    
+                    // Validate form - التحقق من صحة النموذج
+                    if (!reviewText || !reviewerName) {
+                        alert('يرجى ملء جميع الحقول المطلوبة');
+                        return;
+                    }
+                    
+                    // Create new review element - إنشاء عنصر مراجعة جديد
+                    const today = new Date();
+                    const dateStr = today.getFullYear() + '-' + 
+                          String(today.getMonth() + 1).padStart(2, '0') + '-' + 
+                          String(today.getDate()).padStart(2, '0');
+                    
+                    const newReview = document.createElement('div');
+                    newReview.className = 'review-item';
+                    newReview.innerHTML = `
+                        <div class="review-header">
+                            <span class="reviewer-name">${reviewerName}</span>
+                            <div class="rating">${'★'.repeat(parseInt(ratingValue))}</div>
+                            <span class="review-date">${dateStr}</span>
+                        </div>
+                        <p class="review-content">${reviewText}</p>
+                    `;
+                    
+                    // Add to reviews container - إضافة إلى حاوية المراجعات
+                    const reviewsContainer = document.querySelector('.reviews-container');
+                    reviewsContainer.insertBefore(newReview, reviewsContainer.firstChild);
+                    
+                    // Clear form - مسح النموذج
+                    reviewForm.reset();
+                    
+                    // Show success message - عرض رسالة النجاح
+                    alert('تم إضافة مراجعتك بنجاح!');
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

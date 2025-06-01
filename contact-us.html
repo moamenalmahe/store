@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <title>BOA STORE - اتصل بنا</title>
+</head>
+<body>
+    <canvas id="spaceCanvas"></canvas>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">BOA STORE</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="products.html">المنتجات</a></li>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+                <li class="menu-toggle-item">
+                    <button id="menu-toggle-btn" class="menu-toggle-btn">
+                        <i class="menu-icon">☰</i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Dropdown menu overlay -->
+    <div id="menu-overlay" class="menu-overlay">
+        <div class="menu-content">
+            <div class="menu-header">
+                <h2>القائمة</h2>
+                <button id="close-menu-btn" class="close-menu-btn">&times;</button>
+            </div>
+            <div class="search-container">
+                <h3>بحث</h3>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="ابحث عن منتجات...">
+                    <button id="search-btn">بحث</button>
+                </div>
+            </div>
+            <div class="menu-links">
+                <div class="menu-sections-container">
+                    <div class="menu-section">
+                        <h3>روابط سريعة</h3>
+                        <ul>
+                            <li><a href="about.html">من نحن</a></li>
+                            <li><a href="contact-us.html">اتصل بنا</a></li>
+                            <li><a href="products.html">تصفح المنتجات</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-section">
+                        <h3>تواصل معنا</h3>
+                        <div class="social-links">
+                            <a href="https://facebook.com/" target="_blank" class="social-link facebook">
+                                <i class="social-icon">f</i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://instagram.com/" target="_blank" class="social-link instagram">
+                                <i class="social-icon">I</i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://discord.gg/" target="_blank" class="social-link discord">
+                                <i class="social-icon">D</i>
+                                <span>Discord</span>
+                            </a>
+                            <a href="https://x.com/" target="_blank" class="social-link twitter">
+                                <i class="social-icon">X</i>
+                                <span>Twitter/X</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-container">
+        <div class="content-section">
+            <center><h2>اتصل بنا</h2></center>
+            <p>يمكنك التواصل معنا للاستفسار عن حسابات Call of Duty المتوفرة لدينا أو للاستفسار عن الأسعار بالجنيه المصري.</p>
+        </div>
+        
+        <div class="contact-form-container">
+            <form class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contact-name">الاسم</label>
+                        <input type="text" id="contact-name" placeholder="أدخل اسمك الكامل" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">البريد الإلكتروني</label>
+                        <input type="email" id="contact-email" placeholder="example@email.com" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-subject">الموضوع</label>
+                    <select id="contact-subject">
+                        <option value="account">استفسار عن حساب</option>
+                        <option value="price">استفسار عن الأسعار</option>
+                        <option value="payment">طرق الدفع</option>
+                        <option value="other">أخرى</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-message">الرسالة</label>
+                    <textarea id="contact-message" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">إرسال</button>
+            </form>
+        </div>
+        
+        <div class="content-section">
+            <h3>معلومات الاتصال</h3>
+            <p><strong>البريد الإلكتروني:</strong> info@boastore.com</p>
+            <p><strong>رقم الهاتف:</strong> +20 123 456 7890</p>
+            <p>نقبل الدفع عن طريق المحافظ الالكترونية و انستا باي و التحويلات البنكيه</p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <!-- Utility functions - وظائف المساعدة -->
+    <script src="js/utility.js"></script>
+    <!-- Forms functionality - وظائف النماذج -->
+    <script src="js/forms.js"></script>
+    <!-- Menu functionality script - سكريبت وظائف القائمة -->
+    <script src="js/menu.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the contact form element - الحصول على عنصر نموذج الاتصال
+            const contactForm = document.querySelector('.contact-form');
+            
+            // Check if contact form exists on the page - التحقق من وجود نموذج الاتصال في الصفحة
+            if (contactForm) {
+                // Add submit event listener to the form - إضافة مستمع حدث الإرسال إلى النموذج
+                // Handle form submission
+                // معالجة إرسال النموذج
+                contactForm.addEventListener('submit', function(e) {
+                    // Prevent default form submission - منع الإرسال الافتراضي للنموذج
+                    e.preventDefault();
+                    
+                    // Get form values - الحصول على قيم النموذج
+                    // Collect user input from form fields
+                    // جمع إدخال المستخدم من حقول النموذج
+                    const name = document.getElementById('contact-name').value.trim();
+                    const email = document.getElementById('contact-email').value.trim();
+                    const subject = document.getElementById('contact-subject').value;
+                    const message = document.getElementById('contact-message').value.trim();
+                    
+                    // Simple validation - تحقق بسيط
+                    // Check if required fields are filled
+                    // التحقق من ملء الحقول المطلوبة
+                    if (!name || !email || !message) {
+                        showNotification('يرجى ملء جميع الحقول المطلوبة', 'error');
+                        return;
+                    }
+                    
+                    // Email validation - التحقق من صحة البريد الإلكتروني
+                    // Check if email format is valid using regex
+                    // التحقق من صحة تنسيق البريد الإلكتروني باستخدام التعبير النمطي
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        showNotification('يرجى إدخال بريد إلكتروني صحيح', 'error');
+                        return;
+                    }
+                    
+                    // In a real app, you would send the form data to a server here
+                    // في تطبيق حقيقي، سترسل بيانات النموذج إلى خادم هنا
+                    
+                    // Show loading state - إظهار حالة التحميل
+                    // Change button text to show processing state
+                    // تغيير نص الزر لإظهار حالة المعالجة
+                    const submitBtn = contactForm.querySelector('.submit-btn');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'جاري الإرسال...';
+                    submitBtn.disabled = true;
+                    
+                    // Simulate server request - محاكاة طلب الخادم
+                    // Artificially delay response to simulate server processing
+                    // تأخير الاستجابة اصطناعيًا لمحاكاة معالجة الخادم
+                    setTimeout(() => {
+                        // Reset form - إعادة تعيين النموذج
+                        contactForm.reset();
+                        
+                        // Reset button - إعادة تعيين الزر
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        
+                        // Show success message - عرض رسالة النجاح
+                        showNotification('تم إرسال رسالتك بنجاح. سنتواصل معك قريباً.', 'success');
+                    }, 1500);
+                });
+            }
+            
+            // Function to show notification - وظيفة لإظهار الإشعار
+            // Displays success or error messages to the user
+            // عرض رسائل النجاح أو الخطأ للمستخدم
+            function showNotification(message, type) {
+                // Remove existing notification if any - إزالة الإشعار الموجود إن وجد
+                const existingNotification = document.querySelector('.form-notification');
+                if (existingNotification) {
+                    existingNotification.remove();
+                }
+                
+                // Create notification element - إنشاء عنصر الإشعار
+                // Build HTML element for the notification
+                // بناء عنصر HTML للإشعار
+                const notification = document.createElement('div');
+                notification.className = `form-notification ${type}`;
+                notification.textContent = message;
+                
+                // Add to DOM - إضافة إلى DOM
+                const formContainer = document.querySelector('.contact-form-container');
+                formContainer.appendChild(notification);
+                
+                // Add active class for animation - إضافة فئة نشطة للحركة
+                // Apply CSS animation to show the notification
+                // تطبيق حركة CSS لإظهار الإشعار
+                setTimeout(() => {
+                    notification.classList.add('active');
+                }, 10);
+                
+                // Remove after delay - إزالة بعد تأخير
+                // Auto-hide notification after a few seconds
+                // إخفاء الإشعار تلقائيًا بعد بضع ثوانٍ
+                setTimeout(() => {
+                    notification.classList.remove('active');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>

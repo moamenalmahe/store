@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <!-- Meta tags and page setup - وسوم التعريف وإعداد الصفحة -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS stylesheets - ملفات الأنماط -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <!-- Page title - عنوان الصفحة -->
+    <title>BOA STORE - الدردشة مع البائع</title>
+</head>
+<body>
+    <!-- Space background canvas - كانفاس خلفية الفضاء -->
+    <canvas id="spaceCanvas"></canvas>
+    
+    <!-- Navigation bar - شريط التنقل -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">BOA STORE</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="products.html">المنتجات</a></li>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+                <li class="menu-toggle-item">
+                    <button id="menu-toggle-btn" class="menu-toggle-btn">
+                        <i class="menu-icon">☰</i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Dropdown menu overlay -->
+    <div id="menu-overlay" class="menu-overlay">
+        <div class="menu-content">
+            <div class="menu-header">
+                <h2>القائمة</h2>
+                <button id="close-menu-btn" class="close-menu-btn">&times;</button>
+            </div>
+            <div class="search-container">
+                <h3>بحث</h3>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="ابحث عن منتجات...">
+                    <button id="search-btn">بحث</button>
+                </div>
+            </div>
+            <div class="menu-links">
+                <div class="menu-sections-container">
+                    <div class="menu-section">
+                        <h3>روابط سريعة</h3>
+                        <ul>
+                            <li><a href="about.html">من نحن</a></li>
+                            <li><a href="contact-us.html">اتصل بنا</a></li>
+                            <li><a href="products.html">تصفح المنتجات</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-section">
+                        <h3>تواصل معنا</h3>
+                        <div class="social-links">
+                            <a href="https://facebook.com/" target="_blank" class="social-link facebook">
+                                <i class="social-icon">f</i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://instagram.com/" target="_blank" class="social-link instagram">
+                                <i class="social-icon">I</i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://discord.gg/" target="_blank" class="social-link discord">
+                                <i class="social-icon">D</i>
+                                <span>Discord</span>
+                            </a>
+                            <a href="https://x.com/" target="_blank" class="social-link twitter">
+                                <i class="social-icon">X</i>
+                                <span>Twitter/X</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Chat section container - حاوية قسم الدردشة -->
+    <div class="section-container">
+        <!-- Back to products link - رابط العودة إلى المنتجات -->
+        <div class="back-link">
+            <a href="products.html">← العودة إلى المنتجات</a>
+        </div>
+        
+        <!-- Chat purchase layout - تخطيط الدردشة للشراء -->
+        <div class="chat-purchase-layout">
+            <!-- Product info sidebar - الشريط الجانبي لمعلومات المنتج -->
+            <div class="product-info-sidebar">
+                <div class="product-category warzone">Warzone</div>
+                <h2 id="product-title">حساب Warzone مستوى 100+ مع Damascus</h2>
+                <div class="product-price-large">
+                    <span id="product-price">199 EGP</span>
+                </div>
+                <div class="product-availability in-stock">متوفر</div>
+                
+                <div class="product-image-small">
+                    <img src="https://via.placeholder.com/300x200" alt="حساب Warzone" id="product-image">
+                </div>
+                
+                <div class="payment-methods">
+                    <h3>طرق الدفع المقبولة</h3>
+                    <div class="payment-icons">
+                        <span class="payment-icon">Visa</span>
+                        <span class="payment-icon">MasterCard</span>
+                        <span class="payment-icon">Fawry</span>
+                        <span class="payment-icon">Instapay</span>
+                    </div>
+                </div>
+                
+                <!-- Seller Information - معلومات البائع -->
+                <div class="seller-info" id="seller-info">
+                    <strong>البائع:</strong> <span id="seller-name">مدير النظام</span>
+                </div>
+                
+                <!-- Purchase status - حالة الشراء -->
+                <div class="purchase-status">
+                    <div class="status-indicator pending">
+                        <span class="status-dot"></span>
+                        في انتظار تأكيد الدفع
+                    </div>
+                </div>
+                
+                <!-- Confirmation message - رسالة التأكيد -->
+                <div class="confirmation-message" id="confirmation-message">
+                    تم تأكيد الدفع بنجاح! سيتم إرسال تفاصيل الحساب إلى بريدك الإلكتروني خلال دقائق.
+                </div>
+                
+                <!-- Rejection message - رسالة الرفض -->
+                <div class="rejection-message" id="rejection-message">
+                    عذراً، لم نتمكن من تأكيد عملية الدفع. يرجى التأكد من تحويل المبلغ الصحيح إلى الحساب الصحيح وإرسال صورة واضحة للإيصال.
+                </div>
+                
+                <!-- Email input for account details - إدخال البريد الإلكتروني لتفاصيل الحساب -->
+                <div class="email-input-container">
+                    <h3>البريد الإلكتروني لاستلام تفاصيل الحساب</h3>
+                    <div class="form-group">
+                        <input type="email" id="user-email" placeholder="أدخل بريدك الإلكتروني هنا" required>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chat area - منطقة الدردشة -->
+            <div class="chat-area">
+                <div class="chat-header">
+                    <h3>إتمام عملية الشراء</h3>
+                    <p>التواصل مع البائع لإتمام الشراء</p>
+                </div>
+                
+                <div class="chat-messages" id="chat-messages">
+                    <!-- System message - رسالة النظام -->
+                    <div class="message system-message">
+                        <div class="message-content">
+                            مرحبًا بك في خدمة الشراء من BOA STORE. يرجى إتمام عملية الدفع باستخدام إحدى طرق الدفع المتاحة وإرسال إيصال الدفع.
+                        </div>
+                        <div class="message-time">الآن</div>
+                    </div>
+                    
+                    <!-- Payment instructions message - رسالة تعليمات الدفع -->
+                    <div class="message system-message">
+                        <div class="message-content">
+                            <strong>تفاصيل الدفع للمنتج: <span id="product-name-chat"></span></strong>
+                            <br><br>
+                            يرجى تحويل مبلغ <strong><span id="product-price-chat"></span></strong> إلى أحد الحسابات التالية:
+                            <ul>
+                                <li>فودافون كاش: 01XXXXXXXXX</li>
+                                <li>إنستا باي: @boastore</li>
+                                <li>بنك مصر: 123456789</li>
+                            </ul>
+                            بعد إتمام التحويل، يرجى إرسال صورة لإيصال الدفع أدناه وسيتم تأكيد طلبك في أقرب وقت.
+                        </div>
+                        <div class="message-time">الآن</div>
+                    </div>
+                </div>
+                
+                <div class="chat-input">
+                    <form id="chat-form">
+                        <input type="text" id="message-input" placeholder="اكتب رسالتك هنا..." required>
+                        <button type="submit" class="send-btn">إرسال</button>
+                    </form>
+                    <div class="attachment-controls">
+                        <label for="file-upload" class="attachment-btn">
+                            <span class="attachment-icon">📎</span>
+                            إرفاق صورة إيصال الدفع
+                        </label>
+                        <input type="file" id="file-upload" accept="image/*" style="display: none;">
+                        <span id="file-name"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Account Details Modal (shows after purchase confirmation) - نافذة تفاصيل الحساب (تظهر بعد تأكيد الشراء) -->
+    <div class="purchase-modal" id="account-details-modal">
+        <div class="purchase-modal-content">
+            <span class="close-modal">&times;</span>
+            
+            <h2>تفاصيل الحساب</h2>
+            
+            <div class="purchase-details">
+                <h3>شكراً لشرائك من BOA STORE</h3>
+                <p>تم إتمام عملية الشراء بنجاح! فيما يلي تفاصيل الحساب الخاص بك:</p>
+            </div>
+            
+            <!-- Account login credentials - بيانات تسجيل دخول الحساب -->
+            <div class="account-details">
+                <div class="account-detail">
+                    <strong>البريد الإلكتروني:</strong>
+                    <span>example@callofduty.com</span>
+                </div>
+                
+                <div class="account-detail">
+                    <strong>كلمة المرور:</strong>
+                    <span>ExamplePassword123</span>
+                </div>
+            </div>
+            
+            <!-- Security warning - تحذير أمني -->
+            <div class="security-warning">
+                <p><strong>تحذير أمني:</strong> يرجى تغيير كلمة المرور فور تسجيل الدخول للحفاظ على أمان حسابك. لا تشارك بيانات تسجيل الدخول مع أي شخص.</p>
+                <p>تم إرسال هذه المعلومات أيضًا إلى بريدك الإلكتروني المسجل.</p>
+            </div>
+            
+            <!-- Save details button - زر حفظ التفاصيل -->
+            <button class="save-details-btn">حفظ التفاصيل</button>
+        </div>
+    </div>
+
+    <!-- JavaScript files - ملفات الجافا سكريبت -->
+    <script src="js/main.js"></script>
+    <script src="js/utility.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>

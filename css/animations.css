@@ -1,0 +1,224 @@
+/* Animations and Effects for BOA STORE
+ * Contains reusable animations and transition effects used throughout the site
+ */
+
+/* Smooth scroll behavior - سلوك التمرير السلس للصفحة */
+/* Enables smooth scrolling animation for the entire page - يمكّن تأثير التمرير السلس للصفحة بأكملها */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fade in animation - تأثير الظهور التدريجي */
+/* Animation that fades in content while moving upwards - تأثير حركي يظهر المحتوى تدريجياً مع التحرك للأعلى */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for fading in modal dialogs */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover transitions - تحولات عند التحويم */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.hover-up {
+    transition: transform 0.3s ease;
+}
+
+.hover-up:hover {
+    transform: translateY(-5px);
+}
+
+/* Glow effect - تأثير التوهج */
+.text-glow {
+    text-shadow: 0 0 10px rgba(40, 130, 220, 0.8);
+}
+
+.box-glow {
+    box-shadow: 0 0 15px rgba(64, 169, 255, 0.3);
+}
+
+.box-glow:hover {
+    box-shadow: 0 0 25px rgba(64, 169, 255, 0.5);
+}
+
+/* Spinner animation for loading states - تأثير دوران للتحميل */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #64a0ff;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+/* Pulse animation for attention-getting elements - تأثير النبض للعناصر التي تتطلب انتباه */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Fade in for notifications and alerts - ظهور تدريجي للإشعارات والتنبيهات */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Slide in animations for different directions - تأثيرات الانزلاق من اتجاهات مختلفة */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Animation classes for slide effects - فئات التأثيرات الحركية للانزلاق */
+.slide-right {
+    animation: slideInRight 0.5s forwards;
+}
+
+.slide-left {
+    animation: slideInLeft 0.5s forwards;
+}
+
+.slide-up {
+    animation: slideInUp 0.5s forwards;
+}
+
+.slide-down {
+    animation: slideInDown 0.5s forwards;
+}
+
+/* Scroll to top button - زر العودة لأعلى الصفحة */
+/* Button that appears when scrolling down to help users return to top - زر يظهر عند التمرير لأسفل لمساعدة المستخدمين على العودة إلى الأعلى */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(12, 76, 130, 0.8);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 20, 50, 0.4);
+    z-index: 100;
+    border: 1px solid rgba(64, 142, 221, 0.3);
+}
+
+/* Scroll button visibility state - حالة ظهور زر التمرير */
+/* Controls when the button is visible based on scroll position - يتحكم في وقت ظهور الزر بناءً على موضع التمرير */
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Scroll button hover effects - تأثيرات تحويم زر التمرير */
+/* Visual feedback when user hovers over the button - ردود فعل مرئية عندما يحوم المستخدم فوق الزر */
+.scroll-to-top:hover {
+    background-color: rgba(20, 94, 156, 0.9);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(64, 169, 255, 0.3);
+}
+
+/* Arrow symbol for scroll button - رمز السهم لزر التمرير */
+/* Adds an up arrow character to the button - يضيف رمز السهم لأعلى على الزر */
+.scroll-to-top::after {
+    content: "↑";
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Animation timing for staggered elements - توقيت التأثيرات للعناصر المتتالية */
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+.stagger-item:nth-child(3) { animation-delay: 0.3s; }
+.stagger-item:nth-child(4) { animation-delay: 0.4s; }
+.stagger-item:nth-child(5) { animation-delay: 0.5s; }
+.stagger-item:nth-child(6) { animation-delay: 0.6s; }
+.stagger-item:nth-child(7) { animation-delay: 0.7s; }
+.stagger-item:nth-child(8) { animation-delay: 0.8s; } 
